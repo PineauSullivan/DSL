@@ -23,7 +23,8 @@ Voici le résultat obtenu :
 
 Étape 3
 -------
-Puis, il faut ajouter d'agendas sous le bon format (dans mon cas, ".agenda"). 
+Puis, il faut ajouter un agenda sous le bon format (dans mon cas, ".agenda").
+*Remarque : j'ai réalisé une grammaire qui permet de définir autant d'agendas que nous le désirons dans un seul fichier.*
 
 Exemple :
 ```
@@ -64,7 +65,7 @@ Agenda MyAgenda2 (
 
 Étape 4
 -------
-Enfin, il suffit de faire un main permettent de lire son agenda.
+Enfin, il suffit de faire un main permettant de lire son agenda.
 
 Voici comment il faut faire pour lire les ressources de votre agenda :
 ```java
