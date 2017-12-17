@@ -24,8 +24,6 @@ public class App {
 	public static List<EObject> agendas = new ArrayList<EObject>();
 
 	public static void main(String[] args) {
-		//listes des agendas
-		
 		//Charge monAgenda1.agenda
 		AjoutAgenda("./src/monAgenda1.agenda");
 		//Charge monAgenda2.agenda
@@ -36,7 +34,6 @@ public class App {
 		AjoutAgenda("./src/monAgenda4.agenda");
 		//Charge monAgenda5.agenda
 		AjoutAgenda("./src/monAgenda5.agenda");
-
 		
 		for(EObject agenda : agendas){
 			affichageAgenda(agenda);
