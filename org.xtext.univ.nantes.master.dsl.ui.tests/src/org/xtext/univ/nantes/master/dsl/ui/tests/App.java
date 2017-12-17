@@ -48,7 +48,7 @@ public class App {
 //					System.out.println(objectInterne.toString());
 			}
 		}
-		String nameAgenda = (String) preambule.eGet(preambule.eClass().getEStructuralFeature("nameAgenda"));
+		String nameAgenda = (String) preambule.eGet(preambule.eClass().getEStructuralFeature("name"));
 		System.out.println(nameAgenda);
 		System.out.println("----------------------------------------");
 		System.out.println();
