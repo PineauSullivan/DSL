@@ -1,0 +1,14 @@
+Agenda MyAgenda3 (
+    Description "WorkAgenda3"
+
+    Event Meeting3 {
+	    Place 'Paris'
+	    Date '17/11/15'
+	    Start '9:00'
+	    End '10:00'
+    }
+    
+    Task WriteReport3 relatesTo Meeting3 {
+        deadline "17/11/15"
+    }
+}

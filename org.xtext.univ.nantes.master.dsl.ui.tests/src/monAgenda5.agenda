@@ -1,0 +1,11 @@
+Agenda MyAgenda5 (
+    Description "WorkAgenda5"
+
+    Event Meeting5 {
+	    Place 'partout'
+	    Date '17/11/15'
+	    Start '9:00'
+	    End '10:00'
+    }
+
+}
