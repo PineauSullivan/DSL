@@ -34,6 +34,8 @@ public class App {
 		
 		EObject preambule = null;
 		
+		EObject description = null;
+		
 		TreeIterator<EObject> it = resource.getAllContents();
 		while(it.hasNext()) {
 			EObject object = it.next();
@@ -44,12 +46,17 @@ public class App {
 					events.add(objectInterne);
 				}else if(objectInterne.eClass().getName().equals("PREAMBULE")){
 					preambule = objectInterne;
+				}else if(objectInterne.eClass().getName().equals("DESCRIPTION")){
+					description = objectInterne;
 				}
-//					System.out.println(objectInterne.toString());
+				//permet de tous afficher pour débugger
+				//System.out.println(objectInterne.toString());
 			}
 		}
 		String nameAgenda = (String) preambule.eGet(preambule.eClass().getEStructuralFeature("name"));
-		System.out.println(nameAgenda);
+		System.out.println("Nom de l'agenda : "+nameAgenda);
+		String descriptionAgenda = (String) description.eGet(description.eClass().getEStructuralFeature("description"));
+		System.out.println("Description : "+descriptionAgenda);
 		System.out.println("----------------------------------------");
 		System.out.println();
 		
