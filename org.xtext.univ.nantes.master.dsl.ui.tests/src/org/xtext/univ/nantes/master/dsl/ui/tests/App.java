@@ -15,7 +15,29 @@ import com.google.inject.Injector;
 
 public class App {
 
+	public static List<EObject> agendas = new ArrayList<EObject>();
+
 	public static void main(String[] args) {
+		//listes des agendas
+		
+		//Charge monAgenda1.agenda
+		AjoutAgenda("./src/monAgenda1.agenda");
+		//Charge monAgenda2.agenda
+		AjoutAgenda("./src/monAgenda2.agenda");
+		//Charge monAgenda3.agenda
+		AjoutAgenda("./src/monAgenda3.agenda");
+		//Charge monAgenda4.agenda
+		AjoutAgenda("./src/monAgenda4.agenda");
+		//Charge monAgenda5.agenda
+		AjoutAgenda("./src/monAgenda5.agenda");
+
+		
+		for(EObject agenda : agendas){
+			affichageAgenda(agenda);
+		}
+	}
+
+	public static void AjoutAgenda(String namefile){
 		// do this only once per application
 		Injector injector = new AgendaStandaloneSetup().createInjectorAndDoEMFRegistration();
 		 
@@ -23,10 +45,8 @@ public class App {
 		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
 		 
 		// load a resource by URI, in this case from the file system
-		Resource resource = resourceSet.getResource(URI.createFileURI("./src/mesAgendas.agenda"), true);
+		Resource resource = resourceSet.getResource(URI.createFileURI(namefile), true);;
 		
-		//listes des agendas
-		List<EObject> agendas = new ArrayList<EObject>();
 		TreeIterator<EObject> its = resource.getAllContents();
 		while(its.hasNext()) {
 			EObject object = its.next();
@@ -36,12 +56,8 @@ public class App {
 				}
 			}
 		}
-		
-		for(EObject agenda : agendas){
-			affichageAgenda(agenda);
-		}
 	}
-
+	
 	//Affichage d'un agenda
 	public static void affichageAgenda(EObject agenda){
 		//listes des événements
