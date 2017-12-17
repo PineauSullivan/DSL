@@ -122,68 +122,50 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMODEL"
-    // InternalAgenda.g:71:1: ruleMODEL returns [EObject current=null] : ( (lv_List_0_0= ruleTYPE ) )* ;
+    // InternalAgenda.g:71:1: ruleMODEL returns [EObject current=null] : ( (lv_entite_0_0= ruleTYPE ) ) ;
     public final EObject ruleMODEL() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_List_0_0 = null;
+        EObject lv_entite_0_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalAgenda.g:77:2: ( ( (lv_List_0_0= ruleTYPE ) )* )
-            // InternalAgenda.g:78:2: ( (lv_List_0_0= ruleTYPE ) )*
+            // InternalAgenda.g:77:2: ( ( (lv_entite_0_0= ruleTYPE ) ) )
+            // InternalAgenda.g:78:2: ( (lv_entite_0_0= ruleTYPE ) )
             {
-            // InternalAgenda.g:78:2: ( (lv_List_0_0= ruleTYPE ) )*
-            loop1:
-            do {
-                int alt1=2;
-                int LA1_0 = input.LA(1);
+            // InternalAgenda.g:78:2: ( (lv_entite_0_0= ruleTYPE ) )
+            // InternalAgenda.g:79:3: (lv_entite_0_0= ruleTYPE )
+            {
+            // InternalAgenda.g:79:3: (lv_entite_0_0= ruleTYPE )
+            // InternalAgenda.g:80:4: lv_entite_0_0= ruleTYPE
+            {
 
-                if ( (LA1_0==11) ) {
-                    alt1=1;
-                }
+            				newCompositeNode(grammarAccess.getMODELAccess().getEntiteTYPEParserRuleCall_0());
+            			
+            pushFollow(FOLLOW_2);
+            lv_entite_0_0=ruleTYPE();
 
-
-                switch (alt1) {
-            	case 1 :
-            	    // InternalAgenda.g:79:3: (lv_List_0_0= ruleTYPE )
-            	    {
-            	    // InternalAgenda.g:79:3: (lv_List_0_0= ruleTYPE )
-            	    // InternalAgenda.g:80:4: lv_List_0_0= ruleTYPE
-            	    {
-
-            	    				newCompositeNode(grammarAccess.getMODELAccess().getListTYPEParserRuleCall_0());
-            	    			
-            	    pushFollow(FOLLOW_3);
-            	    lv_List_0_0=ruleTYPE();
-
-            	    state._fsp--;
+            state._fsp--;
 
 
-            	    				if (current==null) {
-            	    					current = createModelElementForParent(grammarAccess.getMODELRule());
-            	    				}
-            	    				add(
-            	    					current,
-            	    					"List",
-            	    					lv_List_0_0,
-            	    					"org.xtext.univ.nantes.master.dsl.Agenda.TYPE");
-            	    				afterParserOrEnumRuleCall();
-            	    			
+            				if (current==null) {
+            					current = createModelElementForParent(grammarAccess.getMODELRule());
+            				}
+            				set(
+            					current,
+            					"entite",
+            					lv_entite_0_0,
+            					"org.xtext.univ.nantes.master.dsl.Agenda.TYPE");
+            				afterParserOrEnumRuleCall();
+            			
 
-            	    }
+            }
 
 
-            	    }
-            	    break;
-
-            	default :
-            	    break loop1;
-                }
-            } while (true);
+            }
 
 
             }
@@ -348,7 +330,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
             // InternalAgenda.g:139:2: (otherlv_0= 'Agenda' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'Description' ( (lv_description_4_0= RULE_STRING ) ) ( (lv_event_5_0= ruleEVENT ) )* ( (lv_task_6_0= ruleTASK ) )* otherlv_7= ')' )
             // InternalAgenda.g:140:3: otherlv_0= 'Agenda' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'Description' ( (lv_description_4_0= RULE_STRING ) ) ( (lv_event_5_0= ruleEVENT ) )* ( (lv_task_6_0= ruleTASK ) )* otherlv_7= ')'
             {
-            otherlv_0=(Token)match(input,11,FOLLOW_4); 
+            otherlv_0=(Token)match(input,11,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAGENDAAccess().getAgendaKeyword_0());
             		
@@ -358,7 +340,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
             // InternalAgenda.g:145:4: (lv_name_1_0= RULE_ID )
             // InternalAgenda.g:146:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_4); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getAGENDAAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -378,11 +360,11 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_6); 
+            otherlv_2=(Token)match(input,12,FOLLOW_5); 
 
             			newLeafNode(otherlv_2, grammarAccess.getAGENDAAccess().getLeftParenthesisKeyword_2());
             		
-            otherlv_3=(Token)match(input,13,FOLLOW_7); 
+            otherlv_3=(Token)match(input,13,FOLLOW_6); 
 
             			newLeafNode(otherlv_3, grammarAccess.getAGENDAAccess().getDescriptionKeyword_3());
             		
@@ -392,7 +374,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
             // InternalAgenda.g:171:4: (lv_description_4_0= RULE_STRING )
             // InternalAgenda.g:172:5: lv_description_4_0= RULE_STRING
             {
-            lv_description_4_0=(Token)match(input,RULE_STRING,FOLLOW_8); 
+            lv_description_4_0=(Token)match(input,RULE_STRING,FOLLOW_7); 
 
             					newLeafNode(lv_description_4_0, grammarAccess.getAGENDAAccess().getDescriptionSTRINGTerminalRuleCall_4_0());
             				
@@ -413,17 +395,17 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
             }
 
             // InternalAgenda.g:188:3: ( (lv_event_5_0= ruleEVENT ) )*
-            loop2:
+            loop1:
             do {
-                int alt2=2;
-                int LA2_0 = input.LA(1);
+                int alt1=2;
+                int LA1_0 = input.LA(1);
 
-                if ( (LA2_0==15) ) {
-                    alt2=1;
+                if ( (LA1_0==15) ) {
+                    alt1=1;
                 }
 
 
-                switch (alt2) {
+                switch (alt1) {
             	case 1 :
             	    // InternalAgenda.g:189:4: (lv_event_5_0= ruleEVENT )
             	    {
@@ -433,7 +415,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
 
             	    					newCompositeNode(grammarAccess.getAGENDAAccess().getEventEVENTParserRuleCall_5_0());
             	    				
-            	    pushFollow(FOLLOW_8);
+            	    pushFollow(FOLLOW_7);
             	    lv_event_5_0=ruleEVENT();
 
             	    state._fsp--;
@@ -457,22 +439,22 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop2;
+            	    break loop1;
                 }
             } while (true);
 
             // InternalAgenda.g:207:3: ( (lv_task_6_0= ruleTASK ) )*
-            loop3:
+            loop2:
             do {
-                int alt3=2;
-                int LA3_0 = input.LA(1);
+                int alt2=2;
+                int LA2_0 = input.LA(1);
 
-                if ( (LA3_0==22) ) {
-                    alt3=1;
+                if ( (LA2_0==22) ) {
+                    alt2=1;
                 }
 
 
-                switch (alt3) {
+                switch (alt2) {
             	case 1 :
             	    // InternalAgenda.g:208:4: (lv_task_6_0= ruleTASK )
             	    {
@@ -482,7 +464,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
 
             	    					newCompositeNode(grammarAccess.getAGENDAAccess().getTaskTASKParserRuleCall_6_0());
             	    				
-            	    pushFollow(FOLLOW_9);
+            	    pushFollow(FOLLOW_8);
             	    lv_task_6_0=ruleTASK();
 
             	    state._fsp--;
@@ -506,7 +488,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop3;
+            	    break loop2;
                 }
             } while (true);
 
@@ -600,7 +582,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
             // InternalAgenda.g:248:2: (otherlv_0= 'Event' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'Place' ( (lv_place_4_0= RULE_STRING ) ) otherlv_5= 'Date' ( (lv_date_6_0= RULE_STRING ) ) otherlv_7= 'Start' ( (lv_start_8_0= RULE_STRING ) ) otherlv_9= 'End' ( (lv_end_10_0= RULE_STRING ) ) otherlv_11= '}' )
             // InternalAgenda.g:249:3: otherlv_0= 'Event' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'Place' ( (lv_place_4_0= RULE_STRING ) ) otherlv_5= 'Date' ( (lv_date_6_0= RULE_STRING ) ) otherlv_7= 'Start' ( (lv_start_8_0= RULE_STRING ) ) otherlv_9= 'End' ( (lv_end_10_0= RULE_STRING ) ) otherlv_11= '}'
             {
-            otherlv_0=(Token)match(input,15,FOLLOW_4); 
+            otherlv_0=(Token)match(input,15,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getEVENTAccess().getEventKeyword_0());
             		
@@ -610,7 +592,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
             // InternalAgenda.g:254:4: (lv_name_1_0= RULE_ID )
             // InternalAgenda.g:255:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_10); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getEVENTAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -630,11 +612,11 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,16,FOLLOW_11); 
+            otherlv_2=(Token)match(input,16,FOLLOW_10); 
 
             			newLeafNode(otherlv_2, grammarAccess.getEVENTAccess().getLeftCurlyBracketKeyword_2());
             		
-            otherlv_3=(Token)match(input,17,FOLLOW_7); 
+            otherlv_3=(Token)match(input,17,FOLLOW_6); 
 
             			newLeafNode(otherlv_3, grammarAccess.getEVENTAccess().getPlaceKeyword_3());
             		
@@ -644,7 +626,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
             // InternalAgenda.g:280:4: (lv_place_4_0= RULE_STRING )
             // InternalAgenda.g:281:5: lv_place_4_0= RULE_STRING
             {
-            lv_place_4_0=(Token)match(input,RULE_STRING,FOLLOW_12); 
+            lv_place_4_0=(Token)match(input,RULE_STRING,FOLLOW_11); 
 
             					newLeafNode(lv_place_4_0, grammarAccess.getEVENTAccess().getPlaceSTRINGTerminalRuleCall_4_0());
             				
@@ -664,7 +646,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,18,FOLLOW_7); 
+            otherlv_5=(Token)match(input,18,FOLLOW_6); 
 
             			newLeafNode(otherlv_5, grammarAccess.getEVENTAccess().getDateKeyword_5());
             		
@@ -674,7 +656,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
             // InternalAgenda.g:302:4: (lv_date_6_0= RULE_STRING )
             // InternalAgenda.g:303:5: lv_date_6_0= RULE_STRING
             {
-            lv_date_6_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
+            lv_date_6_0=(Token)match(input,RULE_STRING,FOLLOW_12); 
 
             					newLeafNode(lv_date_6_0, grammarAccess.getEVENTAccess().getDateSTRINGTerminalRuleCall_6_0());
             				
@@ -694,7 +676,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,19,FOLLOW_7); 
+            otherlv_7=(Token)match(input,19,FOLLOW_6); 
 
             			newLeafNode(otherlv_7, grammarAccess.getEVENTAccess().getStartKeyword_7());
             		
@@ -704,7 +686,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
             // InternalAgenda.g:324:4: (lv_start_8_0= RULE_STRING )
             // InternalAgenda.g:325:5: lv_start_8_0= RULE_STRING
             {
-            lv_start_8_0=(Token)match(input,RULE_STRING,FOLLOW_14); 
+            lv_start_8_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
 
             					newLeafNode(lv_start_8_0, grammarAccess.getEVENTAccess().getStartSTRINGTerminalRuleCall_8_0());
             				
@@ -724,7 +706,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,20,FOLLOW_7); 
+            otherlv_9=(Token)match(input,20,FOLLOW_6); 
 
             			newLeafNode(otherlv_9, grammarAccess.getEVENTAccess().getEndKeyword_9());
             		
@@ -734,7 +716,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
             // InternalAgenda.g:346:4: (lv_end_10_0= RULE_STRING )
             // InternalAgenda.g:347:5: lv_end_10_0= RULE_STRING
             {
-            lv_end_10_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
+            lv_end_10_0=(Token)match(input,RULE_STRING,FOLLOW_14); 
 
             					newLeafNode(lv_end_10_0, grammarAccess.getEVENTAccess().getEndSTRINGTerminalRuleCall_10_0());
             				
@@ -840,7 +822,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
             // InternalAgenda.g:385:2: (otherlv_0= 'Task' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'relatesTo' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' otherlv_5= 'deadline' ( (lv_deadline_6_0= RULE_STRING ) ) otherlv_7= '}' )
             // InternalAgenda.g:386:3: otherlv_0= 'Task' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'relatesTo' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' otherlv_5= 'deadline' ( (lv_deadline_6_0= RULE_STRING ) ) otherlv_7= '}'
             {
-            otherlv_0=(Token)match(input,22,FOLLOW_4); 
+            otherlv_0=(Token)match(input,22,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTASKAccess().getTaskKeyword_0());
             		
@@ -850,7 +832,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
             // InternalAgenda.g:391:4: (lv_name_1_0= RULE_ID )
             // InternalAgenda.g:392:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_16); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_15); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getTASKAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -871,17 +853,17 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
             }
 
             // InternalAgenda.g:408:3: (otherlv_2= 'relatesTo' ( (otherlv_3= RULE_ID ) ) )?
-            int alt4=2;
-            int LA4_0 = input.LA(1);
+            int alt3=2;
+            int LA3_0 = input.LA(1);
 
-            if ( (LA4_0==23) ) {
-                alt4=1;
+            if ( (LA3_0==23) ) {
+                alt3=1;
             }
-            switch (alt4) {
+            switch (alt3) {
                 case 1 :
                     // InternalAgenda.g:409:4: otherlv_2= 'relatesTo' ( (otherlv_3= RULE_ID ) )
                     {
-                    otherlv_2=(Token)match(input,23,FOLLOW_4); 
+                    otherlv_2=(Token)match(input,23,FOLLOW_3); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getTASKAccess().getRelatesToKeyword_2_0());
                     			
@@ -896,7 +878,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
                     							current = createModelElement(grammarAccess.getTASKRule());
                     						}
                     					
-                    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_10); 
+                    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_9); 
 
                     						newLeafNode(otherlv_3, grammarAccess.getTASKAccess().getRefEventEVENTCrossReference_2_1_0());
                     					
@@ -912,11 +894,11 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,16,FOLLOW_17); 
+            otherlv_4=(Token)match(input,16,FOLLOW_16); 
 
             			newLeafNode(otherlv_4, grammarAccess.getTASKAccess().getLeftCurlyBracketKeyword_3());
             		
-            otherlv_5=(Token)match(input,24,FOLLOW_7); 
+            otherlv_5=(Token)match(input,24,FOLLOW_6); 
 
             			newLeafNode(otherlv_5, grammarAccess.getTASKAccess().getDeadlineKeyword_4());
             		
@@ -926,7 +908,7 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
             // InternalAgenda.g:436:4: (lv_deadline_6_0= RULE_STRING )
             // InternalAgenda.g:437:5: lv_deadline_6_0= RULE_STRING
             {
-            lv_deadline_6_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
+            lv_deadline_6_0=(Token)match(input,RULE_STRING,FOLLOW_14); 
 
             					newLeafNode(lv_deadline_6_0, grammarAccess.getTASKAccess().getDeadlineSTRINGTerminalRuleCall_5_0());
             				
@@ -978,20 +960,19 @@ public class InternalAgendaParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000802L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x000000000040C000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000404000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000810000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000000040C000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000404000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000810000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000001000000L});
 
 }

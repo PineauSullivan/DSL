@@ -78,22 +78,22 @@ ruleMODEL returns [EObject current=null]
 	(
 		(
 			{
-				newCompositeNode(grammarAccess.getMODELAccess().getListTYPEParserRuleCall_0());
+				newCompositeNode(grammarAccess.getMODELAccess().getEntiteTYPEParserRuleCall_0());
 			}
-			lv_List_0_0=ruleTYPE
+			lv_entite_0_0=ruleTYPE
 			{
 				if ($current==null) {
 					$current = createModelElementForParent(grammarAccess.getMODELRule());
 				}
-				add(
+				set(
 					$current,
-					"List",
-					lv_List_0_0,
+					"entite",
+					lv_entite_0_0,
 					"org.xtext.univ.nantes.master.dsl.Agenda.TYPE");
 				afterParserOrEnumRuleCall();
 			}
 		)
-	)*
+	)
 ;
 
 // Entry rule entryRuleTYPE

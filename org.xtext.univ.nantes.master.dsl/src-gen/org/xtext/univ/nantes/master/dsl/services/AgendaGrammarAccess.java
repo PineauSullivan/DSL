@@ -24,18 +24,18 @@ public class AgendaGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class MODELElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.univ.nantes.master.dsl.Agenda.MODEL");
-		private final Assignment cListAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cListTYPEParserRuleCall_0 = (RuleCall)cListAssignment.eContents().get(0);
+		private final Assignment cEntiteAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cEntiteTYPEParserRuleCall_0 = (RuleCall)cEntiteAssignment.eContents().get(0);
 		
 		//MODEL:
-		//	List+=TYPE*;
+		//	entite=TYPE;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//List+=TYPE*
-		public Assignment getListAssignment() { return cListAssignment; }
+		//entite=TYPE
+		public Assignment getEntiteAssignment() { return cEntiteAssignment; }
 		
 		//TYPE
-		public RuleCall getListTYPEParserRuleCall_0() { return cListTYPEParserRuleCall_0; }
+		public RuleCall getEntiteTYPEParserRuleCall_0() { return cEntiteTYPEParserRuleCall_0; }
 	}
 	public class TYPEElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.univ.nantes.master.dsl.Agenda.TYPE");
@@ -312,7 +312,7 @@ public class AgendaGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//MODEL:
-	//	List+=TYPE*;
+	//	entite=TYPE;
 	public MODELElements getMODELAccess() {
 		return pMODEL;
 	}

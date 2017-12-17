@@ -39,7 +39,7 @@ public class AgendaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEVENTAccess().getGroup(), "rule__EVENT__Group__0");
 					put(grammarAccess.getTASKAccess().getGroup(), "rule__TASK__Group__0");
 					put(grammarAccess.getTASKAccess().getGroup_2(), "rule__TASK__Group_2__0");
-					put(grammarAccess.getMODELAccess().getListAssignment(), "rule__MODEL__ListAssignment");
+					put(grammarAccess.getMODELAccess().getEntiteAssignment(), "rule__MODEL__EntiteAssignment");
 					put(grammarAccess.getAGENDAAccess().getNameAssignment_1(), "rule__AGENDA__NameAssignment_1");
 					put(grammarAccess.getAGENDAAccess().getDescriptionAssignment_4(), "rule__AGENDA__DescriptionAssignment_4");
 					put(grammarAccess.getAGENDAAccess().getEventAssignment_5(), "rule__AGENDA__EventAssignment_5");

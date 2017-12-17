@@ -3,19 +3,14 @@
  */
 package org.xtext.univ.nantes.master.dsl.agenda.impl;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage;
 import org.xtext.univ.nantes.master.dsl.agenda.MODEL;
@@ -29,7 +24,7 @@ import org.xtext.univ.nantes.master.dsl.agenda.TYPE;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.impl.MODELImpl#getList <em>List</em>}</li>
+ *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.impl.MODELImpl#getEntite <em>Entite</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +32,14 @@ import org.xtext.univ.nantes.master.dsl.agenda.TYPE;
 public class MODELImpl extends MinimalEObjectImpl.Container implements MODEL
 {
   /**
-   * The cached value of the '{@link #getList() <em>List</em>}' containment reference list.
+   * The cached value of the '{@link #getEntite() <em>Entite</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getList()
+   * @see #getEntite()
    * @generated
    * @ordered
    */
-  protected EList<TYPE> list;
+  protected TYPE entite;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,13 +67,47 @@ public class MODELImpl extends MinimalEObjectImpl.Container implements MODEL
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<TYPE> getList()
+  public TYPE getEntite()
   {
-    if (list == null)
+    return entite;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetEntite(TYPE newEntite, NotificationChain msgs)
+  {
+    TYPE oldEntite = entite;
+    entite = newEntite;
+    if (eNotificationRequired())
     {
-      list = new EObjectContainmentEList<TYPE>(TYPE.class, this, AgendaPackage.MODEL__LIST);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AgendaPackage.MODEL__ENTITE, oldEntite, newEntite);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return list;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setEntite(TYPE newEntite)
+  {
+    if (newEntite != entite)
+    {
+      NotificationChain msgs = null;
+      if (entite != null)
+        msgs = ((InternalEObject)entite).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AgendaPackage.MODEL__ENTITE, null, msgs);
+      if (newEntite != null)
+        msgs = ((InternalEObject)newEntite).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AgendaPackage.MODEL__ENTITE, null, msgs);
+      msgs = basicSetEntite(newEntite, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AgendaPackage.MODEL__ENTITE, newEntite, newEntite));
   }
 
   /**
@@ -91,8 +120,8 @@ public class MODELImpl extends MinimalEObjectImpl.Container implements MODEL
   {
     switch (featureID)
     {
-      case AgendaPackage.MODEL__LIST:
-        return ((InternalEList<?>)getList()).basicRemove(otherEnd, msgs);
+      case AgendaPackage.MODEL__ENTITE:
+        return basicSetEntite(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +136,8 @@ public class MODELImpl extends MinimalEObjectImpl.Container implements MODEL
   {
     switch (featureID)
     {
-      case AgendaPackage.MODEL__LIST:
-        return getList();
+      case AgendaPackage.MODEL__ENTITE:
+        return getEntite();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,15 +147,13 @@ public class MODELImpl extends MinimalEObjectImpl.Container implements MODEL
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case AgendaPackage.MODEL__LIST:
-        getList().clear();
-        getList().addAll((Collection<? extends TYPE>)newValue);
+      case AgendaPackage.MODEL__ENTITE:
+        setEntite((TYPE)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +169,8 @@ public class MODELImpl extends MinimalEObjectImpl.Container implements MODEL
   {
     switch (featureID)
     {
-      case AgendaPackage.MODEL__LIST:
-        getList().clear();
+      case AgendaPackage.MODEL__ENTITE:
+        setEntite((TYPE)null);
         return;
     }
     super.eUnset(featureID);
@@ -159,8 +186,8 @@ public class MODELImpl extends MinimalEObjectImpl.Container implements MODEL
   {
     switch (featureID)
     {
-      case AgendaPackage.MODEL__LIST:
-        return list != null && !list.isEmpty();
+      case AgendaPackage.MODEL__ENTITE:
+        return entite != null;
     }
     return super.eIsSet(featureID);
   }

@@ -113,49 +113,31 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleMODEL"
-    // InternalAgenda.g:62:1: ruleMODEL : ( ( rule__MODEL__ListAssignment )* ) ;
+    // InternalAgenda.g:62:1: ruleMODEL : ( ( rule__MODEL__EntiteAssignment ) ) ;
     public final void ruleMODEL() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAgenda.g:66:2: ( ( ( rule__MODEL__ListAssignment )* ) )
-            // InternalAgenda.g:67:2: ( ( rule__MODEL__ListAssignment )* )
+            // InternalAgenda.g:66:2: ( ( ( rule__MODEL__EntiteAssignment ) ) )
+            // InternalAgenda.g:67:2: ( ( rule__MODEL__EntiteAssignment ) )
             {
-            // InternalAgenda.g:67:2: ( ( rule__MODEL__ListAssignment )* )
-            // InternalAgenda.g:68:3: ( rule__MODEL__ListAssignment )*
+            // InternalAgenda.g:67:2: ( ( rule__MODEL__EntiteAssignment ) )
+            // InternalAgenda.g:68:3: ( rule__MODEL__EntiteAssignment )
             {
-             before(grammarAccess.getMODELAccess().getListAssignment()); 
-            // InternalAgenda.g:69:3: ( rule__MODEL__ListAssignment )*
-            loop1:
-            do {
-                int alt1=2;
-                int LA1_0 = input.LA(1);
+             before(grammarAccess.getMODELAccess().getEntiteAssignment()); 
+            // InternalAgenda.g:69:3: ( rule__MODEL__EntiteAssignment )
+            // InternalAgenda.g:69:4: rule__MODEL__EntiteAssignment
+            {
+            pushFollow(FOLLOW_2);
+            rule__MODEL__EntiteAssignment();
 
-                if ( (LA1_0==11) ) {
-                    alt1=1;
-                }
+            state._fsp--;
 
 
-                switch (alt1) {
-            	case 1 :
-            	    // InternalAgenda.g:69:4: rule__MODEL__ListAssignment
-            	    {
-            	    pushFollow(FOLLOW_3);
-            	    rule__MODEL__ListAssignment();
+            }
 
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop1;
-                }
-            } while (true);
-
-             after(grammarAccess.getMODELAccess().getListAssignment()); 
+             after(grammarAccess.getMODELAccess().getEntiteAssignment()); 
 
             }
 
@@ -489,7 +471,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:181:1: ( rule__AGENDA__Group__0__Impl rule__AGENDA__Group__1 )
             // InternalAgenda.g:182:2: rule__AGENDA__Group__0__Impl rule__AGENDA__Group__1
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_3);
             rule__AGENDA__Group__0__Impl();
 
             state._fsp--;
@@ -564,7 +546,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:208:1: ( rule__AGENDA__Group__1__Impl rule__AGENDA__Group__2 )
             // InternalAgenda.g:209:2: rule__AGENDA__Group__1__Impl rule__AGENDA__Group__2
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_4);
             rule__AGENDA__Group__1__Impl();
 
             state._fsp--;
@@ -649,7 +631,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:235:1: ( rule__AGENDA__Group__2__Impl rule__AGENDA__Group__3 )
             // InternalAgenda.g:236:2: rule__AGENDA__Group__2__Impl rule__AGENDA__Group__3
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_5);
             rule__AGENDA__Group__2__Impl();
 
             state._fsp--;
@@ -724,7 +706,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:262:1: ( rule__AGENDA__Group__3__Impl rule__AGENDA__Group__4 )
             // InternalAgenda.g:263:2: rule__AGENDA__Group__3__Impl rule__AGENDA__Group__4
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_6);
             rule__AGENDA__Group__3__Impl();
 
             state._fsp--;
@@ -799,7 +781,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:289:1: ( rule__AGENDA__Group__4__Impl rule__AGENDA__Group__5 )
             // InternalAgenda.g:290:2: rule__AGENDA__Group__4__Impl rule__AGENDA__Group__5
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_7);
             rule__AGENDA__Group__4__Impl();
 
             state._fsp--;
@@ -884,7 +866,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:316:1: ( rule__AGENDA__Group__5__Impl rule__AGENDA__Group__6 )
             // InternalAgenda.g:317:2: rule__AGENDA__Group__5__Impl rule__AGENDA__Group__6
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_7);
             rule__AGENDA__Group__5__Impl();
 
             state._fsp--;
@@ -927,21 +909,21 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getAGENDAAccess().getEventAssignment_5()); 
             // InternalAgenda.g:331:2: ( rule__AGENDA__EventAssignment_5 )*
-            loop2:
+            loop1:
             do {
-                int alt2=2;
-                int LA2_0 = input.LA(1);
+                int alt1=2;
+                int LA1_0 = input.LA(1);
 
-                if ( (LA2_0==15) ) {
-                    alt2=1;
+                if ( (LA1_0==15) ) {
+                    alt1=1;
                 }
 
 
-                switch (alt2) {
+                switch (alt1) {
             	case 1 :
             	    // InternalAgenda.g:331:3: rule__AGENDA__EventAssignment_5
             	    {
-            	    pushFollow(FOLLOW_9);
+            	    pushFollow(FOLLOW_8);
             	    rule__AGENDA__EventAssignment_5();
 
             	    state._fsp--;
@@ -951,7 +933,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop2;
+            	    break loop1;
                 }
             } while (true);
 
@@ -987,7 +969,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:343:1: ( rule__AGENDA__Group__6__Impl rule__AGENDA__Group__7 )
             // InternalAgenda.g:344:2: rule__AGENDA__Group__6__Impl rule__AGENDA__Group__7
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_7);
             rule__AGENDA__Group__6__Impl();
 
             state._fsp--;
@@ -1030,21 +1012,21 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getAGENDAAccess().getTaskAssignment_6()); 
             // InternalAgenda.g:358:2: ( rule__AGENDA__TaskAssignment_6 )*
-            loop3:
+            loop2:
             do {
-                int alt3=2;
-                int LA3_0 = input.LA(1);
+                int alt2=2;
+                int LA2_0 = input.LA(1);
 
-                if ( (LA3_0==22) ) {
-                    alt3=1;
+                if ( (LA2_0==22) ) {
+                    alt2=1;
                 }
 
 
-                switch (alt3) {
+                switch (alt2) {
             	case 1 :
             	    // InternalAgenda.g:358:3: rule__AGENDA__TaskAssignment_6
             	    {
-            	    pushFollow(FOLLOW_10);
+            	    pushFollow(FOLLOW_9);
             	    rule__AGENDA__TaskAssignment_6();
 
             	    state._fsp--;
@@ -1054,7 +1036,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop3;
+            	    break loop2;
                 }
             } while (true);
 
@@ -1160,7 +1142,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:397:1: ( rule__EVENT__Group__0__Impl rule__EVENT__Group__1 )
             // InternalAgenda.g:398:2: rule__EVENT__Group__0__Impl rule__EVENT__Group__1
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_3);
             rule__EVENT__Group__0__Impl();
 
             state._fsp--;
@@ -1235,7 +1217,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:424:1: ( rule__EVENT__Group__1__Impl rule__EVENT__Group__2 )
             // InternalAgenda.g:425:2: rule__EVENT__Group__1__Impl rule__EVENT__Group__2
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_10);
             rule__EVENT__Group__1__Impl();
 
             state._fsp--;
@@ -1320,7 +1302,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:451:1: ( rule__EVENT__Group__2__Impl rule__EVENT__Group__3 )
             // InternalAgenda.g:452:2: rule__EVENT__Group__2__Impl rule__EVENT__Group__3
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_11);
             rule__EVENT__Group__2__Impl();
 
             state._fsp--;
@@ -1395,7 +1377,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:478:1: ( rule__EVENT__Group__3__Impl rule__EVENT__Group__4 )
             // InternalAgenda.g:479:2: rule__EVENT__Group__3__Impl rule__EVENT__Group__4
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_6);
             rule__EVENT__Group__3__Impl();
 
             state._fsp--;
@@ -1470,7 +1452,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:505:1: ( rule__EVENT__Group__4__Impl rule__EVENT__Group__5 )
             // InternalAgenda.g:506:2: rule__EVENT__Group__4__Impl rule__EVENT__Group__5
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_12);
             rule__EVENT__Group__4__Impl();
 
             state._fsp--;
@@ -1555,7 +1537,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:532:1: ( rule__EVENT__Group__5__Impl rule__EVENT__Group__6 )
             // InternalAgenda.g:533:2: rule__EVENT__Group__5__Impl rule__EVENT__Group__6
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_6);
             rule__EVENT__Group__5__Impl();
 
             state._fsp--;
@@ -1630,7 +1612,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:559:1: ( rule__EVENT__Group__6__Impl rule__EVENT__Group__7 )
             // InternalAgenda.g:560:2: rule__EVENT__Group__6__Impl rule__EVENT__Group__7
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_13);
             rule__EVENT__Group__6__Impl();
 
             state._fsp--;
@@ -1715,7 +1697,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:586:1: ( rule__EVENT__Group__7__Impl rule__EVENT__Group__8 )
             // InternalAgenda.g:587:2: rule__EVENT__Group__7__Impl rule__EVENT__Group__8
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_6);
             rule__EVENT__Group__7__Impl();
 
             state._fsp--;
@@ -1790,7 +1772,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:613:1: ( rule__EVENT__Group__8__Impl rule__EVENT__Group__9 )
             // InternalAgenda.g:614:2: rule__EVENT__Group__8__Impl rule__EVENT__Group__9
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_14);
             rule__EVENT__Group__8__Impl();
 
             state._fsp--;
@@ -1875,7 +1857,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:640:1: ( rule__EVENT__Group__9__Impl rule__EVENT__Group__10 )
             // InternalAgenda.g:641:2: rule__EVENT__Group__9__Impl rule__EVENT__Group__10
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_6);
             rule__EVENT__Group__9__Impl();
 
             state._fsp--;
@@ -1950,7 +1932,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:667:1: ( rule__EVENT__Group__10__Impl rule__EVENT__Group__11 )
             // InternalAgenda.g:668:2: rule__EVENT__Group__10__Impl rule__EVENT__Group__11
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_15);
             rule__EVENT__Group__10__Impl();
 
             state._fsp--;
@@ -2105,7 +2087,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:721:1: ( rule__TASK__Group__0__Impl rule__TASK__Group__1 )
             // InternalAgenda.g:722:2: rule__TASK__Group__0__Impl rule__TASK__Group__1
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_3);
             rule__TASK__Group__0__Impl();
 
             state._fsp--;
@@ -2180,7 +2162,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:748:1: ( rule__TASK__Group__1__Impl rule__TASK__Group__2 )
             // InternalAgenda.g:749:2: rule__TASK__Group__1__Impl rule__TASK__Group__2
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_16);
             rule__TASK__Group__1__Impl();
 
             state._fsp--;
@@ -2265,7 +2247,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:775:1: ( rule__TASK__Group__2__Impl rule__TASK__Group__3 )
             // InternalAgenda.g:776:2: rule__TASK__Group__2__Impl rule__TASK__Group__3
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_16);
             rule__TASK__Group__2__Impl();
 
             state._fsp--;
@@ -2308,13 +2290,13 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getTASKAccess().getGroup_2()); 
             // InternalAgenda.g:790:2: ( rule__TASK__Group_2__0 )?
-            int alt4=2;
-            int LA4_0 = input.LA(1);
+            int alt3=2;
+            int LA3_0 = input.LA(1);
 
-            if ( (LA4_0==24) ) {
-                alt4=1;
+            if ( (LA3_0==24) ) {
+                alt3=1;
             }
-            switch (alt4) {
+            switch (alt3) {
                 case 1 :
                     // InternalAgenda.g:790:3: rule__TASK__Group_2__0
                     {
@@ -2361,7 +2343,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:802:1: ( rule__TASK__Group__3__Impl rule__TASK__Group__4 )
             // InternalAgenda.g:803:2: rule__TASK__Group__3__Impl rule__TASK__Group__4
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_17);
             rule__TASK__Group__3__Impl();
 
             state._fsp--;
@@ -2436,7 +2418,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:829:1: ( rule__TASK__Group__4__Impl rule__TASK__Group__5 )
             // InternalAgenda.g:830:2: rule__TASK__Group__4__Impl rule__TASK__Group__5
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_6);
             rule__TASK__Group__4__Impl();
 
             state._fsp--;
@@ -2511,7 +2493,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:856:1: ( rule__TASK__Group__5__Impl rule__TASK__Group__6 )
             // InternalAgenda.g:857:2: rule__TASK__Group__5__Impl rule__TASK__Group__6
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_15);
             rule__TASK__Group__5__Impl();
 
             state._fsp--;
@@ -2666,7 +2648,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:910:1: ( rule__TASK__Group_2__0__Impl rule__TASK__Group_2__1 )
             // InternalAgenda.g:911:2: rule__TASK__Group_2__0__Impl rule__TASK__Group_2__1
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_3);
             rule__TASK__Group_2__0__Impl();
 
             state._fsp--;
@@ -2811,9 +2793,9 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__TASK__Group_2__1__Impl"
 
 
-    // $ANTLR start "rule__MODEL__ListAssignment"
-    // InternalAgenda.g:960:1: rule__MODEL__ListAssignment : ( ruleTYPE ) ;
-    public final void rule__MODEL__ListAssignment() throws RecognitionException {
+    // $ANTLR start "rule__MODEL__EntiteAssignment"
+    // InternalAgenda.g:960:1: rule__MODEL__EntiteAssignment : ( ruleTYPE ) ;
+    public final void rule__MODEL__EntiteAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -2824,13 +2806,13 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
             // InternalAgenda.g:965:2: ( ruleTYPE )
             // InternalAgenda.g:966:3: ruleTYPE
             {
-             before(grammarAccess.getMODELAccess().getListTYPEParserRuleCall_0()); 
+             before(grammarAccess.getMODELAccess().getEntiteTYPEParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
             ruleTYPE();
 
             state._fsp--;
 
-             after(grammarAccess.getMODELAccess().getListTYPEParserRuleCall_0()); 
+             after(grammarAccess.getMODELAccess().getEntiteTYPEParserRuleCall_0()); 
 
             }
 
@@ -2849,7 +2831,7 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MODEL__ListAssignment"
+    // $ANTLR end "rule__MODEL__EntiteAssignment"
 
 
     // $ANTLR start "rule__AGENDA__NameAssignment_1"
@@ -3318,21 +3300,20 @@ public class InternalAgendaParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000802L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x000000000040C000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000400002L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001010000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000000040C000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000400002L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000001010000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000800000L});
 
 }

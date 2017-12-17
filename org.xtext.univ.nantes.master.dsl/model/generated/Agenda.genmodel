@@ -7,7 +7,7 @@
   <genPackages prefix="Agenda" basePackage="org.xtext.univ.nantes.master.dsl" disposableProviderFactory="true"
       fileExtensions="agenda" ecorePackage="Agenda.ecore#/">
     <genClasses ecoreClass="Agenda.ecore#//MODEL">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Agenda.ecore#//MODEL/List"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Agenda.ecore#//MODEL/entite"/>
     </genClasses>
     <genClasses ecoreClass="Agenda.ecore#//TYPE"/>
     <genClasses ecoreClass="Agenda.ecore#//AGENDA">

@@ -100,10 +100,16 @@ public class AgendaSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     MODEL returns MODEL
 	 *
 	 * Constraint:
-	 *     List+=TYPE+
+	 *     entite=TYPE
 	 */
 	protected void sequence_MODEL(ISerializationContext context, MODEL semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AgendaPackage.Literals.MODEL__ENTITE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgendaPackage.Literals.MODEL__ENTITE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMODELAccess().getEntiteTYPEParserRuleCall_0(), semanticObject.getEntite());
+		feeder.finish();
 	}
 	
 	

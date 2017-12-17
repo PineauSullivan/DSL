@@ -68,13 +68,13 @@ public interface AgendaPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>List</b></em>' containment reference list.
+   * The feature id for the '<em><b>Entite</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__LIST = 0;
+  int MODEL__ENTITE = 0;
 
   /**
    * The number of structural features of the '<em>MODEL</em>' class.
@@ -281,15 +281,15 @@ public interface AgendaPackage extends EPackage
   EClass getMODEL();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.univ.nantes.master.dsl.agenda.MODEL#getList <em>List</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.univ.nantes.master.dsl.agenda.MODEL#getEntite <em>Entite</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>List</em>'.
-   * @see org.xtext.univ.nantes.master.dsl.agenda.MODEL#getList()
+   * @return the meta object for the containment reference '<em>Entite</em>'.
+   * @see org.xtext.univ.nantes.master.dsl.agenda.MODEL#getEntite()
    * @see #getMODEL()
    * @generated
    */
-  EReference getMODEL_List();
+  EReference getMODEL_Entite();
 
   /**
    * Returns the meta object for class '{@link org.xtext.univ.nantes.master.dsl.agenda.TYPE <em>TYPE</em>}'.
@@ -497,12 +497,12 @@ public interface AgendaPackage extends EPackage
     EClass MODEL = eINSTANCE.getMODEL();
 
     /**
-     * The meta object literal for the '<em><b>List</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Entite</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__LIST = eINSTANCE.getMODEL_List();
+    EReference MODEL__ENTITE = eINSTANCE.getMODEL_Entite();
 
     /**
      * The meta object literal for the '{@link org.xtext.univ.nantes.master.dsl.agenda.impl.TYPEImpl <em>TYPE</em>}' class.

@@ -134,7 +134,7 @@ public class AgendaPackageImpl extends EPackageImpl implements AgendaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMODEL_List()
+  public EReference getMODEL_Entite()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -330,7 +330,7 @@ public class AgendaPackageImpl extends EPackageImpl implements AgendaPackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__LIST);
+    createEReference(modelEClass, MODEL__ENTITE);
 
     typeEClass = createEClass(TYPE);
 
@@ -386,7 +386,7 @@ public class AgendaPackageImpl extends EPackageImpl implements AgendaPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, org.xtext.univ.nantes.master.dsl.agenda.MODEL.class, "MODEL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMODEL_List(), this.getTYPE(), null, "List", null, 0, -1, org.xtext.univ.nantes.master.dsl.agenda.MODEL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMODEL_Entite(), this.getTYPE(), null, "entite", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.MODEL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeEClass, org.xtext.univ.nantes.master.dsl.agenda.TYPE.class, "TYPE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

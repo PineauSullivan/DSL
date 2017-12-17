@@ -3,8 +3,6 @@
  */
 package org.xtext.univ.nantes.master.dsl.agenda;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.MODEL#getList <em>List</em>}</li>
+ *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.MODEL#getEntite <em>Entite</em>}</li>
  * </ul>
  *
  * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getMODEL()
@@ -26,19 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface MODEL extends EObject
 {
   /**
-   * Returns the value of the '<em><b>List</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.univ.nantes.master.dsl.agenda.TYPE}.
+   * Returns the value of the '<em><b>Entite</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>List</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Entite</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>List</em>' containment reference list.
-   * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getMODEL_List()
+   * @return the value of the '<em>Entite</em>' containment reference.
+   * @see #setEntite(TYPE)
+   * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getMODEL_Entite()
    * @model containment="true"
    * @generated
    */
-  EList<TYPE> getList();
+  TYPE getEntite();
+
+  /**
+   * Sets the value of the '{@link org.xtext.univ.nantes.master.dsl.agenda.MODEL#getEntite <em>Entite</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Entite</em>' containment reference.
+   * @see #getEntite()
+   * @generated
+   */
+  void setEntite(TYPE value);
 
 } // MODEL
