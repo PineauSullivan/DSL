@@ -24,42 +24,50 @@ public class App {
 		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
 		 
 		// load a resource by URI, in this case from the file system
-		Resource resource = resourceSet.getResource(URI.createFileURI("./src/monAgenda.agenda"), true);
+		Resource resource = resourceSet.getResource(URI.createFileURI("./src/mesAgendas.agenda"), true);
+		
+		//listes des agendas
+		List<EObject> agendas = new ArrayList<EObject>();
+		TreeIterator<EObject> its = resource.getAllContents();
+		while(its.hasNext()) {
+			EObject object = its.next();
+			for (EObject objectInterne : object.eContents()) {
+				if(objectInterne.eClass().getName().equals("AGENDA")){
+					agendas.add(objectInterne);
+				}
+			}
+		}
+		
+		for(EObject agenda : agendas){
+			affichageAgenda(agenda);
+		}
+	}
 
+	//Affichage d'un agenda
+	public static void affichageAgenda(EObject agenda){
 		//listes des événements
 		List<EObject> events = new ArrayList<EObject>();
 
 		//listes des tâches
 		List<EObject> tasks = new ArrayList<EObject>();
-		
-		EObject preambule = null;
-		
-		EObject description = null;
-		
-		TreeIterator<EObject> it = resource.getAllContents();
-		while(it.hasNext()) {
-			EObject object = it.next();
-			for (EObject objectInterne : object.eContents()) {
-				if(objectInterne.eClass().getName().equals("TASK")){
-					tasks.add(objectInterne);
-				}else if(objectInterne.eClass().getName().equals("EVENT")){
-					events.add(objectInterne);
-				}else if(objectInterne.eClass().getName().equals("PREAMBULE")){
-					preambule = objectInterne;
-				}else if(objectInterne.eClass().getName().equals("DESCRIPTION")){
-					description = objectInterne;
-				}
-				//permet de tous afficher pour débugger
-				//System.out.println(objectInterne.toString());
+		for (EObject objectInterne : agenda.eContents()) {
+			if(objectInterne.eClass().getName().equals("TASK")){
+				tasks.add(objectInterne);
+			}else if(objectInterne.eClass().getName().equals("EVENT")){
+				events.add(objectInterne);
 			}
+			//permet de tous afficher pour débugger
+			//System.out.println(objectInterne.toString());
 		}
-		String nameAgenda = (String) preambule.eGet(preambule.eClass().getEStructuralFeature("name"));
+
+		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++");
+		String nameAgenda = (String) agenda.eGet(agenda.eClass().getEStructuralFeature("name"));
 		System.out.println("Nom de l'agenda : "+nameAgenda);
-		String descriptionAgenda = (String) description.eGet(description.eClass().getEStructuralFeature("description"));
+		String descriptionAgenda = (String) agenda.eGet(agenda.eClass().getEStructuralFeature("description"));
 		System.out.println("Description : "+descriptionAgenda);
 		System.out.println("----------------------------------------");
 		System.out.println();
-		
+	
 		System.out.println("List "+events.size()+" events :");
 		for(EObject obj:events){
 			System.out.println(toStringEvent(obj));
@@ -74,6 +82,7 @@ public class App {
 		}
 		System.out.println("----------------------------------------");
 		System.out.println();
+
 	}
 	
 	//Fonction permettant de décrire un événement
@@ -84,19 +93,17 @@ public class App {
 		feature = obj.eClass().getEStructuralFeature("name");
 		name = (feature != null ? (String) obj.eGet(feature) : "");
 		
-		EObject content = obj.eContents().get(0);
+		feature = obj.eClass().getEStructuralFeature("place");
+		place = (feature != null ? (String) obj.eGet(feature) : "");
 
-		feature = content.eClass().getEStructuralFeature("place");
-		place = (feature != null ? (String) content.eGet(feature) : "");
+		feature = obj.eClass().getEStructuralFeature("date");
+		date = (feature != null ? (String) obj.eGet(feature) : "");
 
-		feature = content.eClass().getEStructuralFeature("date");
-		date = (feature != null ? (String) content.eGet(feature) : "");
+		feature = obj.eClass().getEStructuralFeature("start");
+		start = (feature != null ? (String) obj.eGet(feature) : "");
 
-		feature = content.eClass().getEStructuralFeature("start");
-		start = (feature != null ? (String) content.eGet(feature) : "");
-
-		feature = content.eClass().getEStructuralFeature("end");
-		end = (feature != null ? (String) content.eGet(feature) : "");
+		feature = obj.eClass().getEStructuralFeature("end");
+		end = (feature != null ? (String) obj.eGet(feature) : "");
 
 		return name+" - place : "+place+", date : "+date+", start : "+start+", end : "+end+".";
 		
@@ -109,11 +116,15 @@ public class App {
 		feature = obj.eClass().getEStructuralFeature("name");
 		name = (feature != null ? (String) obj.eGet(feature) : "");
 
-		feature = obj.eClass().getEStructuralFeature("nameEvent");
+		feature = obj.eClass().getEStructuralFeature("refEvent");
 		EObject objRef = (EObject) obj.eGet(feature);
 		
-		feature = objRef.eClass().getEStructuralFeature("name");
-		relatesTo = (feature != null ? (String) objRef.eGet(feature) : "");
+		if(objRef!=null){
+			feature = objRef.eClass().getEStructuralFeature("name");
+			relatesTo = (feature != null ? (String) objRef.eGet(feature) : "");
+		}else{
+			relatesTo="Pas de référence";
+		}
 		
 		feature = obj.eClass().getEStructuralFeature("deadline");
 		deadline = (feature != null ? (String) obj.eGet(feature) : "");
