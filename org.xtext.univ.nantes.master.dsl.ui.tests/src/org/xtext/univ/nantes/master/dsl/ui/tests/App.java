@@ -13,6 +13,12 @@ import org.xtext.univ.nantes.master.dsl.AgendaStandaloneSetup;
 
 import com.google.inject.Injector;
 
+/**
+ * 
+ * @author Sullivan Pineau
+ * @version 1.0
+ *
+ */
 public class App {
 
 	public static List<EObject> agendas = new ArrayList<EObject>();
