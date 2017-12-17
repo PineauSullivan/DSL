@@ -24,7 +24,6 @@ Voici le résultat obtenu :
 Étape 3
 -------
 Puis, il faut ajouter d'agendas sous le bon format (dans mon cas, ".agenda"). 
-![Ajouter d'agendas](img/ajout_agenda.png)
 
 Exemple :
 ```
