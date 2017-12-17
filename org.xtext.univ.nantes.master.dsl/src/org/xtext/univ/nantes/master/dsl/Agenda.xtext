@@ -3,7 +3,7 @@ grammar org.xtext.univ.nantes.master.dsl.Agenda with org.eclipse.xtext.common.Te
 generate agenda "http://www.xtext.org/univ/nantes/master/dsl/Agenda"
 
 MODEL :
-    (List+=TYPE)*;
+    (entite=TYPE);
 
 TYPE:
 	AGENDA;
