@@ -24,6 +24,24 @@ public interface AgendaFactory extends EFactory
   AgendaFactory eINSTANCE = org.xtext.univ.nantes.master.dsl.agenda.impl.AgendaFactoryImpl.init();
 
   /**
+   * Returns a new object of class '<em>MODEL</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>MODEL</em>'.
+   * @generated
+   */
+  MODEL createMODEL();
+
+  /**
+   * Returns a new object of class '<em>TYPE</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>TYPE</em>'.
+   * @generated
+   */
+  TYPE createTYPE();
+
+  /**
    * Returns a new object of class '<em>AGENDA</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -33,42 +51,6 @@ public interface AgendaFactory extends EFactory
   AGENDA createAGENDA();
 
   /**
-   * Returns a new object of class '<em>PREAMBULE</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>PREAMBULE</em>'.
-   * @generated
-   */
-  PREAMBULE createPREAMBULE();
-
-  /**
-   * Returns a new object of class '<em>CONTENU</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>CONTENU</em>'.
-   * @generated
-   */
-  CONTENU createCONTENU();
-
-  /**
-   * Returns a new object of class '<em>DESCRIPTION</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>DESCRIPTION</em>'.
-   * @generated
-   */
-  DESCRIPTION createDESCRIPTION();
-
-  /**
-   * Returns a new object of class '<em>EVENTS OR TASKS</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>EVENTS OR TASKS</em>'.
-   * @generated
-   */
-  EVENTS_OR_TASKS createEVENTS_OR_TASKS();
-
-  /**
    * Returns a new object of class '<em>EVENT</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -76,15 +58,6 @@ public interface AgendaFactory extends EFactory
    * @generated
    */
   EVENT createEVENT();
-
-  /**
-   * Returns a new object of class '<em>CONTENT EVENT</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>CONTENT EVENT</em>'.
-   * @generated
-   */
-  CONTENT_EVENT createCONTENT_EVENT();
 
   /**
    * Returns a new object of class '<em>TASK</em>'.

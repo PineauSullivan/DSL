@@ -6,7 +6,6 @@ package org.xtext.univ.nantes.master.dsl.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
-import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.Grammar;
@@ -23,53 +22,57 @@ import org.eclipse.xtext.service.GrammarProvider;
 @Singleton
 public class AgendaGrammarAccess extends AbstractGrammarElementFinder {
 	
-	public class AGENDAElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.univ.nantes.master.dsl.Agenda.AGENDA");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cPreamAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cPreamPREAMBULEParserRuleCall_0_0 = (RuleCall)cPreamAssignment_0.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cContenuAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cContenuCONTENUParserRuleCall_2_0 = (RuleCall)cContenuAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+	public class MODELElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.univ.nantes.master.dsl.Agenda.MODEL");
+		private final Assignment cListAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cListTYPEParserRuleCall_0 = (RuleCall)cListAssignment.eContents().get(0);
 		
-		//AGENDA:
-		//	(pream=PREAMBULE '(' contenu=CONTENU ')')?;
+		//MODEL:
+		//	List+=TYPE*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(pream=PREAMBULE '(' contenu=CONTENU ')')?
-		public Group getGroup() { return cGroup; }
+		//List+=TYPE*
+		public Assignment getListAssignment() { return cListAssignment; }
 		
-		//pream=PREAMBULE
-		public Assignment getPreamAssignment_0() { return cPreamAssignment_0; }
-		
-		//PREAMBULE
-		public RuleCall getPreamPREAMBULEParserRuleCall_0_0() { return cPreamPREAMBULEParserRuleCall_0_0; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-		
-		//contenu=CONTENU
-		public Assignment getContenuAssignment_2() { return cContenuAssignment_2; }
-		
-		//CONTENU
-		public RuleCall getContenuCONTENUParserRuleCall_2_0() { return cContenuCONTENUParserRuleCall_2_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		//TYPE
+		public RuleCall getListTYPEParserRuleCall_0() { return cListTYPEParserRuleCall_0; }
 	}
-	public class PREAMBULEElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.univ.nantes.master.dsl.Agenda.PREAMBULE");
+	public class TYPEElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.univ.nantes.master.dsl.Agenda.TYPE");
+		private final RuleCall cAGENDAParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//TYPE:
+		//	AGENDA;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//AGENDA
+		public RuleCall getAGENDAParserRuleCall() { return cAGENDAParserRuleCall; }
+	}
+	public class AGENDAElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.univ.nantes.master.dsl.Agenda.AGENDA");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAgendaKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cDescriptionKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cDescriptionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cDescriptionSTRINGTerminalRuleCall_4_0 = (RuleCall)cDescriptionAssignment_4.eContents().get(0);
+		private final Assignment cEventAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cEventEVENTParserRuleCall_5_0 = (RuleCall)cEventAssignment_5.eContents().get(0);
+		private final Assignment cTaskAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cTaskTASKParserRuleCall_6_0 = (RuleCall)cTaskAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//PREAMBULE:
-		//	'Agenda' name=ID;
+		//AGENDA:
+		//	'Agenda' name=ID '('
+		//	'Description' description=STRING
+		//	event+=EVENT*
+		//	task+=TASK*
+		//	')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Agenda' name=ID
+		//'Agenda' name=ID '(' 'Description' description=STRING event+=EVENT* task+=TASK* ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'Agenda'
@@ -80,79 +83,33 @@ public class AgendaGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-	}
-	public class CONTENUElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.univ.nantes.master.dsl.Agenda.CONTENU");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cDescAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cDescDESCRIPTIONParserRuleCall_0_0 = (RuleCall)cDescAssignment_0.eContents().get(0);
-		private final Assignment cEvtaAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cEvtaEVENTS_OR_TASKSParserRuleCall_1_0 = (RuleCall)cEvtaAssignment_1.eContents().get(0);
 		
-		//CONTENU:
-		//	desc=DESCRIPTION evta+=EVENTS_OR_TASKS*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//desc=DESCRIPTION evta+=EVENTS_OR_TASKS*
-		public Group getGroup() { return cGroup; }
-		
-		//desc=DESCRIPTION
-		public Assignment getDescAssignment_0() { return cDescAssignment_0; }
-		
-		//DESCRIPTION
-		public RuleCall getDescDESCRIPTIONParserRuleCall_0_0() { return cDescDESCRIPTIONParserRuleCall_0_0; }
-		
-		//evta+=EVENTS_OR_TASKS*
-		public Assignment getEvtaAssignment_1() { return cEvtaAssignment_1; }
-		
-		//EVENTS_OR_TASKS
-		public RuleCall getEvtaEVENTS_OR_TASKSParserRuleCall_1_0() { return cEvtaEVENTS_OR_TASKSParserRuleCall_1_0; }
-	}
-	public class DESCRIPTIONElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.univ.nantes.master.dsl.Agenda.DESCRIPTION");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cDescriptionKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cDescriptionAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cDescriptionSTRINGTerminalRuleCall_1_0 = (RuleCall)cDescriptionAssignment_1.eContents().get(0);
-		
-		//DESCRIPTION:
-		//	'Description' description=STRING;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'Description' description=STRING
-		public Group getGroup() { return cGroup; }
+		//'('
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
 		//'Description'
-		public Keyword getDescriptionKeyword_0() { return cDescriptionKeyword_0; }
+		public Keyword getDescriptionKeyword_3() { return cDescriptionKeyword_3; }
 		
 		//description=STRING
-		public Assignment getDescriptionAssignment_1() { return cDescriptionAssignment_1; }
+		public Assignment getDescriptionAssignment_4() { return cDescriptionAssignment_4; }
 		
 		//STRING
-		public RuleCall getDescriptionSTRINGTerminalRuleCall_1_0() { return cDescriptionSTRINGTerminalRuleCall_1_0; }
-	}
-	public class EVENTS_OR_TASKSElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.univ.nantes.master.dsl.Agenda.EVENTS_OR_TASKS");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cEvent_or_taskAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cEvent_or_taskEVENTParserRuleCall_0_0 = (RuleCall)cEvent_or_taskAssignment_0.eContents().get(0);
-		private final RuleCall cTASKParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		public RuleCall getDescriptionSTRINGTerminalRuleCall_4_0() { return cDescriptionSTRINGTerminalRuleCall_4_0; }
 		
-		//EVENTS_OR_TASKS:
-		//	event_or_task+=EVENT | TASK;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//event_or_task+=EVENT | TASK
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//event_or_task+=EVENT
-		public Assignment getEvent_or_taskAssignment_0() { return cEvent_or_taskAssignment_0; }
+		//event+=EVENT*
+		public Assignment getEventAssignment_5() { return cEventAssignment_5; }
 		
 		//EVENT
-		public RuleCall getEvent_or_taskEVENTParserRuleCall_0_0() { return cEvent_or_taskEVENTParserRuleCall_0_0; }
+		public RuleCall getEventEVENTParserRuleCall_5_0() { return cEventEVENTParserRuleCall_5_0; }
+		
+		//task+=TASK*
+		public Assignment getTaskAssignment_6() { return cTaskAssignment_6; }
 		
 		//TASK
-		public RuleCall getTASKParserRuleCall_1() { return cTASKParserRuleCall_1; }
+		public RuleCall getTaskTASKParserRuleCall_6_0() { return cTaskTASKParserRuleCall_6_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
 	public class EVENTElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.univ.nantes.master.dsl.Agenda.EVENT");
@@ -161,15 +118,30 @@ public class AgendaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cContent_eventAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cContent_eventCONTENT_EVENTParserRuleCall_3_0 = (RuleCall)cContent_eventAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cPlaceKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cPlaceAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cPlaceSTRINGTerminalRuleCall_4_0 = (RuleCall)cPlaceAssignment_4.eContents().get(0);
+		private final Keyword cDateKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cDateAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cDateSTRINGTerminalRuleCall_6_0 = (RuleCall)cDateAssignment_6.eContents().get(0);
+		private final Keyword cStartKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cStartAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cStartSTRINGTerminalRuleCall_8_0 = (RuleCall)cStartAssignment_8.eContents().get(0);
+		private final Keyword cEndKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cEndAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cEndSTRINGTerminalRuleCall_10_0 = (RuleCall)cEndAssignment_10.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//EVENT:
-		//	'Event' name=ID '{' content_event=CONTENT_EVENT '}';
+		//	'Event' name=ID '{'
+		//	'Place' place=STRING
+		//	'Date' date=STRING
+		//	'Start' start=STRING
+		//	'End' end=STRING
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Event' name=ID '{' content_event=CONTENT_EVENT '}'
+		//'Event' name=ID '{' 'Place' place=STRING 'Date' date=STRING 'Start' start=STRING 'End' end=STRING '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Event'
@@ -184,76 +156,44 @@ public class AgendaGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//content_event=CONTENT_EVENT
-		public Assignment getContent_eventAssignment_3() { return cContent_eventAssignment_3; }
-		
-		//CONTENT_EVENT
-		public RuleCall getContent_eventCONTENT_EVENTParserRuleCall_3_0() { return cContent_eventCONTENT_EVENTParserRuleCall_3_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
-	}
-	public class CONTENT_EVENTElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.univ.nantes.master.dsl.Agenda.CONTENT_EVENT");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPlaceKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cPlaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cPlaceSTRINGTerminalRuleCall_1_0 = (RuleCall)cPlaceAssignment_1.eContents().get(0);
-		private final Keyword cDateKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cDataAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cDataSTRINGTerminalRuleCall_3_0 = (RuleCall)cDataAssignment_3.eContents().get(0);
-		private final Keyword cStartKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cStartAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cStartSTRINGTerminalRuleCall_5_0 = (RuleCall)cStartAssignment_5.eContents().get(0);
-		private final Keyword cEndKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cEndAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cEndSTRINGTerminalRuleCall_7_0 = (RuleCall)cEndAssignment_7.eContents().get(0);
-		
-		//CONTENT_EVENT:
-		//	'Place' place=STRING
-		//	'Date' data=STRING
-		//	'Start' start=STRING
-		//	'End' end=STRING;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'Place' place=STRING 'Date' data=STRING 'Start' start=STRING 'End' end=STRING
-		public Group getGroup() { return cGroup; }
-		
 		//'Place'
-		public Keyword getPlaceKeyword_0() { return cPlaceKeyword_0; }
+		public Keyword getPlaceKeyword_3() { return cPlaceKeyword_3; }
 		
 		//place=STRING
-		public Assignment getPlaceAssignment_1() { return cPlaceAssignment_1; }
+		public Assignment getPlaceAssignment_4() { return cPlaceAssignment_4; }
 		
 		//STRING
-		public RuleCall getPlaceSTRINGTerminalRuleCall_1_0() { return cPlaceSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getPlaceSTRINGTerminalRuleCall_4_0() { return cPlaceSTRINGTerminalRuleCall_4_0; }
 		
 		//'Date'
-		public Keyword getDateKeyword_2() { return cDateKeyword_2; }
+		public Keyword getDateKeyword_5() { return cDateKeyword_5; }
 		
-		//data=STRING
-		public Assignment getDataAssignment_3() { return cDataAssignment_3; }
+		//date=STRING
+		public Assignment getDateAssignment_6() { return cDateAssignment_6; }
 		
 		//STRING
-		public RuleCall getDataSTRINGTerminalRuleCall_3_0() { return cDataSTRINGTerminalRuleCall_3_0; }
+		public RuleCall getDateSTRINGTerminalRuleCall_6_0() { return cDateSTRINGTerminalRuleCall_6_0; }
 		
 		//'Start'
-		public Keyword getStartKeyword_4() { return cStartKeyword_4; }
+		public Keyword getStartKeyword_7() { return cStartKeyword_7; }
 		
 		//start=STRING
-		public Assignment getStartAssignment_5() { return cStartAssignment_5; }
+		public Assignment getStartAssignment_8() { return cStartAssignment_8; }
 		
 		//STRING
-		public RuleCall getStartSTRINGTerminalRuleCall_5_0() { return cStartSTRINGTerminalRuleCall_5_0; }
+		public RuleCall getStartSTRINGTerminalRuleCall_8_0() { return cStartSTRINGTerminalRuleCall_8_0; }
 		
 		//'End'
-		public Keyword getEndKeyword_6() { return cEndKeyword_6; }
+		public Keyword getEndKeyword_9() { return cEndKeyword_9; }
 		
 		//end=STRING
-		public Assignment getEndAssignment_7() { return cEndAssignment_7; }
+		public Assignment getEndAssignment_10() { return cEndAssignment_10; }
 		
 		//STRING
-		public RuleCall getEndSTRINGTerminalRuleCall_7_0() { return cEndSTRINGTerminalRuleCall_7_0; }
+		public RuleCall getEndSTRINGTerminalRuleCall_10_0() { return cEndSTRINGTerminalRuleCall_10_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 	public class TASKElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.univ.nantes.master.dsl.Agenda.TASK");
@@ -263,9 +203,9 @@ public class AgendaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cRelatesToKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cNameEventAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final CrossReference cNameEventEVENTCrossReference_2_1_0 = (CrossReference)cNameEventAssignment_2_1.eContents().get(0);
-		private final RuleCall cNameEventEVENTIDTerminalRuleCall_2_1_0_1 = (RuleCall)cNameEventEVENTCrossReference_2_1_0.eContents().get(1);
+		private final Assignment cRefEventAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final CrossReference cRefEventEVENTCrossReference_2_1_0 = (CrossReference)cRefEventAssignment_2_1.eContents().get(0);
+		private final RuleCall cRefEventEVENTIDTerminalRuleCall_2_1_0_1 = (RuleCall)cRefEventEVENTCrossReference_2_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cDeadlineKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cDeadlineAssignment_5 = (Assignment)cGroup.eContents().get(5);
@@ -273,10 +213,12 @@ public class AgendaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//TASK:
-		//	'Task' name=ID ('relatesTo' nameEvent=[EVENT])? '{' 'deadline' deadline=STRING '}';
+		//	'Task' name=ID ('relatesTo' refEvent=[EVENT])? '{'
+		//	'deadline' deadline=STRING
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Task' name=ID ('relatesTo' nameEvent=[EVENT])? '{' 'deadline' deadline=STRING '}'
+		//'Task' name=ID ('relatesTo' refEvent=[EVENT])? '{' 'deadline' deadline=STRING '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Task'
@@ -288,20 +230,20 @@ public class AgendaGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//('relatesTo' nameEvent=[EVENT])?
+		//('relatesTo' refEvent=[EVENT])?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//'relatesTo'
 		public Keyword getRelatesToKeyword_2_0() { return cRelatesToKeyword_2_0; }
 		
-		//nameEvent=[EVENT]
-		public Assignment getNameEventAssignment_2_1() { return cNameEventAssignment_2_1; }
+		//refEvent=[EVENT]
+		public Assignment getRefEventAssignment_2_1() { return cRefEventAssignment_2_1; }
 		
 		//[EVENT]
-		public CrossReference getNameEventEVENTCrossReference_2_1_0() { return cNameEventEVENTCrossReference_2_1_0; }
+		public CrossReference getRefEventEVENTCrossReference_2_1_0() { return cRefEventEVENTCrossReference_2_1_0; }
 		
 		//ID
-		public RuleCall getNameEventEVENTIDTerminalRuleCall_2_1_0_1() { return cNameEventEVENTIDTerminalRuleCall_2_1_0_1; }
+		public RuleCall getRefEventEVENTIDTerminalRuleCall_2_1_0_1() { return cRefEventEVENTIDTerminalRuleCall_2_1_0_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
@@ -320,13 +262,10 @@ public class AgendaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
+	private final MODELElements pMODEL;
+	private final TYPEElements pTYPE;
 	private final AGENDAElements pAGENDA;
-	private final PREAMBULEElements pPREAMBULE;
-	private final CONTENUElements pCONTENU;
-	private final DESCRIPTIONElements pDESCRIPTION;
-	private final EVENTS_OR_TASKSElements pEVENTS_OR_TASKS;
 	private final EVENTElements pEVENT;
-	private final CONTENT_EVENTElements pCONTENT_EVENT;
 	private final TASKElements pTASK;
 	
 	private final Grammar grammar;
@@ -338,13 +277,10 @@ public class AgendaGrammarAccess extends AbstractGrammarElementFinder {
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
+		this.pMODEL = new MODELElements();
+		this.pTYPE = new TYPEElements();
 		this.pAGENDA = new AGENDAElements();
-		this.pPREAMBULE = new PREAMBULEElements();
-		this.pCONTENU = new CONTENUElements();
-		this.pDESCRIPTION = new DESCRIPTIONElements();
-		this.pEVENTS_OR_TASKS = new EVENTS_OR_TASKSElements();
 		this.pEVENT = new EVENTElements();
-		this.pCONTENT_EVENT = new CONTENT_EVENTElements();
 		this.pTASK = new TASKElements();
 	}
 	
@@ -375,8 +311,32 @@ public class AgendaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
+	//MODEL:
+	//	List+=TYPE*;
+	public MODELElements getMODELAccess() {
+		return pMODEL;
+	}
+	
+	public ParserRule getMODELRule() {
+		return getMODELAccess().getRule();
+	}
+	
+	//TYPE:
+	//	AGENDA;
+	public TYPEElements getTYPEAccess() {
+		return pTYPE;
+	}
+	
+	public ParserRule getTYPERule() {
+		return getTYPEAccess().getRule();
+	}
+	
 	//AGENDA:
-	//	(pream=PREAMBULE '(' contenu=CONTENU ')')?;
+	//	'Agenda' name=ID '('
+	//	'Description' description=STRING
+	//	event+=EVENT*
+	//	task+=TASK*
+	//	')';
 	public AGENDAElements getAGENDAAccess() {
 		return pAGENDA;
 	}
@@ -385,48 +345,13 @@ public class AgendaGrammarAccess extends AbstractGrammarElementFinder {
 		return getAGENDAAccess().getRule();
 	}
 	
-	//PREAMBULE:
-	//	'Agenda' name=ID;
-	public PREAMBULEElements getPREAMBULEAccess() {
-		return pPREAMBULE;
-	}
-	
-	public ParserRule getPREAMBULERule() {
-		return getPREAMBULEAccess().getRule();
-	}
-	
-	//CONTENU:
-	//	desc=DESCRIPTION evta+=EVENTS_OR_TASKS*;
-	public CONTENUElements getCONTENUAccess() {
-		return pCONTENU;
-	}
-	
-	public ParserRule getCONTENURule() {
-		return getCONTENUAccess().getRule();
-	}
-	
-	//DESCRIPTION:
-	//	'Description' description=STRING;
-	public DESCRIPTIONElements getDESCRIPTIONAccess() {
-		return pDESCRIPTION;
-	}
-	
-	public ParserRule getDESCRIPTIONRule() {
-		return getDESCRIPTIONAccess().getRule();
-	}
-	
-	//EVENTS_OR_TASKS:
-	//	event_or_task+=EVENT | TASK;
-	public EVENTS_OR_TASKSElements getEVENTS_OR_TASKSAccess() {
-		return pEVENTS_OR_TASKS;
-	}
-	
-	public ParserRule getEVENTS_OR_TASKSRule() {
-		return getEVENTS_OR_TASKSAccess().getRule();
-	}
-	
 	//EVENT:
-	//	'Event' name=ID '{' content_event=CONTENT_EVENT '}';
+	//	'Event' name=ID '{'
+	//	'Place' place=STRING
+	//	'Date' date=STRING
+	//	'Start' start=STRING
+	//	'End' end=STRING
+	//	'}';
 	public EVENTElements getEVENTAccess() {
 		return pEVENT;
 	}
@@ -435,21 +360,10 @@ public class AgendaGrammarAccess extends AbstractGrammarElementFinder {
 		return getEVENTAccess().getRule();
 	}
 	
-	//CONTENT_EVENT:
-	//	'Place' place=STRING
-	//	'Date' data=STRING
-	//	'Start' start=STRING
-	//	'End' end=STRING;
-	public CONTENT_EVENTElements getCONTENT_EVENTAccess() {
-		return pCONTENT_EVENT;
-	}
-	
-	public ParserRule getCONTENT_EVENTRule() {
-		return getCONTENT_EVENTAccess().getRule();
-	}
-	
 	//TASK:
-	//	'Task' name=ID ('relatesTo' nameEvent=[EVENT])? '{' 'deadline' deadline=STRING '}';
+	//	'Task' name=ID ('relatesTo' refEvent=[EVENT])? '{'
+	//	'deadline' deadline=STRING
+	//	'}';
 	public TASKElements getTASKAccess() {
 		return pTASK;
 	}

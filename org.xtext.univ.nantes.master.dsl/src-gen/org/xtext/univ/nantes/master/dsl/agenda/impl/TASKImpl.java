@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage;
 import org.xtext.univ.nantes.master.dsl.agenda.EVENT;
@@ -23,13 +24,13 @@ import org.xtext.univ.nantes.master.dsl.agenda.TASK;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.impl.TASKImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.impl.TASKImpl#getNameEvent <em>Name Event</em>}</li>
+ *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.impl.TASKImpl#getRefEvent <em>Ref Event</em>}</li>
  *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.impl.TASKImpl#getDeadline <em>Deadline</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TASKImpl extends EVENTS_OR_TASKSImpl implements TASK
+public class TASKImpl extends MinimalEObjectImpl.Container implements TASK
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -52,14 +53,14 @@ public class TASKImpl extends EVENTS_OR_TASKSImpl implements TASK
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getNameEvent() <em>Name Event</em>}' reference.
+   * The cached value of the '{@link #getRefEvent() <em>Ref Event</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNameEvent()
+   * @see #getRefEvent()
    * @generated
    * @ordered
    */
-  protected EVENT nameEvent;
+  protected EVENT refEvent;
 
   /**
    * The default value of the '{@link #getDeadline() <em>Deadline</em>}' attribute.
@@ -130,19 +131,19 @@ public class TASKImpl extends EVENTS_OR_TASKSImpl implements TASK
    * <!-- end-user-doc -->
    * @generated
    */
-  public EVENT getNameEvent()
+  public EVENT getRefEvent()
   {
-    if (nameEvent != null && nameEvent.eIsProxy())
+    if (refEvent != null && refEvent.eIsProxy())
     {
-      InternalEObject oldNameEvent = (InternalEObject)nameEvent;
-      nameEvent = (EVENT)eResolveProxy(oldNameEvent);
-      if (nameEvent != oldNameEvent)
+      InternalEObject oldRefEvent = (InternalEObject)refEvent;
+      refEvent = (EVENT)eResolveProxy(oldRefEvent);
+      if (refEvent != oldRefEvent)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgendaPackage.TASK__NAME_EVENT, oldNameEvent, nameEvent));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AgendaPackage.TASK__REF_EVENT, oldRefEvent, refEvent));
       }
     }
-    return nameEvent;
+    return refEvent;
   }
 
   /**
@@ -150,9 +151,9 @@ public class TASKImpl extends EVENTS_OR_TASKSImpl implements TASK
    * <!-- end-user-doc -->
    * @generated
    */
-  public EVENT basicGetNameEvent()
+  public EVENT basicGetRefEvent()
   {
-    return nameEvent;
+    return refEvent;
   }
 
   /**
@@ -160,12 +161,12 @@ public class TASKImpl extends EVENTS_OR_TASKSImpl implements TASK
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNameEvent(EVENT newNameEvent)
+  public void setRefEvent(EVENT newRefEvent)
   {
-    EVENT oldNameEvent = nameEvent;
-    nameEvent = newNameEvent;
+    EVENT oldRefEvent = refEvent;
+    refEvent = newRefEvent;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AgendaPackage.TASK__NAME_EVENT, oldNameEvent, nameEvent));
+      eNotify(new ENotificationImpl(this, Notification.SET, AgendaPackage.TASK__REF_EVENT, oldRefEvent, refEvent));
   }
 
   /**
@@ -203,9 +204,9 @@ public class TASKImpl extends EVENTS_OR_TASKSImpl implements TASK
     {
       case AgendaPackage.TASK__NAME:
         return getName();
-      case AgendaPackage.TASK__NAME_EVENT:
-        if (resolve) return getNameEvent();
-        return basicGetNameEvent();
+      case AgendaPackage.TASK__REF_EVENT:
+        if (resolve) return getRefEvent();
+        return basicGetRefEvent();
       case AgendaPackage.TASK__DEADLINE:
         return getDeadline();
     }
@@ -225,8 +226,8 @@ public class TASKImpl extends EVENTS_OR_TASKSImpl implements TASK
       case AgendaPackage.TASK__NAME:
         setName((String)newValue);
         return;
-      case AgendaPackage.TASK__NAME_EVENT:
-        setNameEvent((EVENT)newValue);
+      case AgendaPackage.TASK__REF_EVENT:
+        setRefEvent((EVENT)newValue);
         return;
       case AgendaPackage.TASK__DEADLINE:
         setDeadline((String)newValue);
@@ -248,8 +249,8 @@ public class TASKImpl extends EVENTS_OR_TASKSImpl implements TASK
       case AgendaPackage.TASK__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AgendaPackage.TASK__NAME_EVENT:
-        setNameEvent((EVENT)null);
+      case AgendaPackage.TASK__REF_EVENT:
+        setRefEvent((EVENT)null);
         return;
       case AgendaPackage.TASK__DEADLINE:
         setDeadline(DEADLINE_EDEFAULT);
@@ -270,8 +271,8 @@ public class TASKImpl extends EVENTS_OR_TASKSImpl implements TASK
     {
       case AgendaPackage.TASK__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AgendaPackage.TASK__NAME_EVENT:
-        return nameEvent != null;
+      case AgendaPackage.TASK__REF_EVENT:
+        return refEvent != null;
       case AgendaPackage.TASK__DEADLINE:
         return DEADLINE_EDEFAULT == null ? deadline != null : !DEADLINE_EDEFAULT.equals(deadline);
     }

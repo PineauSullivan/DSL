@@ -16,12 +16,8 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.univ.nantes.master.dsl.agenda.AGENDA;
 import org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage;
-import org.xtext.univ.nantes.master.dsl.agenda.CONTENT_EVENT;
-import org.xtext.univ.nantes.master.dsl.agenda.CONTENU;
-import org.xtext.univ.nantes.master.dsl.agenda.DESCRIPTION;
 import org.xtext.univ.nantes.master.dsl.agenda.EVENT;
-import org.xtext.univ.nantes.master.dsl.agenda.EVENTS_OR_TASKS;
-import org.xtext.univ.nantes.master.dsl.agenda.PREAMBULE;
+import org.xtext.univ.nantes.master.dsl.agenda.MODEL;
 import org.xtext.univ.nantes.master.dsl.agenda.TASK;
 import org.xtext.univ.nantes.master.dsl.services.AgendaGrammarAccess;
 
@@ -42,23 +38,11 @@ public class AgendaSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case AgendaPackage.AGENDA:
 				sequence_AGENDA(context, (AGENDA) semanticObject); 
 				return; 
-			case AgendaPackage.CONTENT_EVENT:
-				sequence_CONTENT_EVENT(context, (CONTENT_EVENT) semanticObject); 
-				return; 
-			case AgendaPackage.CONTENU:
-				sequence_CONTENU(context, (CONTENU) semanticObject); 
-				return; 
-			case AgendaPackage.DESCRIPTION:
-				sequence_DESCRIPTION(context, (DESCRIPTION) semanticObject); 
-				return; 
 			case AgendaPackage.EVENT:
 				sequence_EVENT(context, (EVENT) semanticObject); 
 				return; 
-			case AgendaPackage.EVENTS_OR_TASKS:
-				sequence_EVENTS_OR_TASKS(context, (EVENTS_OR_TASKS) semanticObject); 
-				return; 
-			case AgendaPackage.PREAMBULE:
-				sequence_PREAMBULE(context, (PREAMBULE) semanticObject); 
+			case AgendaPackage.MODEL:
+				sequence_MODEL(context, (MODEL) semanticObject); 
 				return; 
 			case AgendaPackage.TASK:
 				sequence_TASK(context, (TASK) semanticObject); 
@@ -70,90 +54,13 @@ public class AgendaSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
+	 *     TYPE returns AGENDA
 	 *     AGENDA returns AGENDA
 	 *
 	 * Constraint:
-	 *     (pream=PREAMBULE contenu=CONTENU)
+	 *     (name=ID description=STRING event+=EVENT* task+=TASK*)
 	 */
 	protected void sequence_AGENDA(ISerializationContext context, AGENDA semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AgendaPackage.Literals.AGENDA__PREAM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgendaPackage.Literals.AGENDA__PREAM));
-			if (transientValues.isValueTransient(semanticObject, AgendaPackage.Literals.AGENDA__CONTENU) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgendaPackage.Literals.AGENDA__CONTENU));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAGENDAAccess().getPreamPREAMBULEParserRuleCall_0_0(), semanticObject.getPream());
-		feeder.accept(grammarAccess.getAGENDAAccess().getContenuCONTENUParserRuleCall_2_0(), semanticObject.getContenu());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     CONTENT_EVENT returns CONTENT_EVENT
-	 *
-	 * Constraint:
-	 *     (place=STRING data=STRING start=STRING end=STRING)
-	 */
-	protected void sequence_CONTENT_EVENT(ISerializationContext context, CONTENT_EVENT semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AgendaPackage.Literals.CONTENT_EVENT__PLACE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgendaPackage.Literals.CONTENT_EVENT__PLACE));
-			if (transientValues.isValueTransient(semanticObject, AgendaPackage.Literals.CONTENT_EVENT__DATA) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgendaPackage.Literals.CONTENT_EVENT__DATA));
-			if (transientValues.isValueTransient(semanticObject, AgendaPackage.Literals.CONTENT_EVENT__START) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgendaPackage.Literals.CONTENT_EVENT__START));
-			if (transientValues.isValueTransient(semanticObject, AgendaPackage.Literals.CONTENT_EVENT__END) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgendaPackage.Literals.CONTENT_EVENT__END));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCONTENT_EVENTAccess().getPlaceSTRINGTerminalRuleCall_1_0(), semanticObject.getPlace());
-		feeder.accept(grammarAccess.getCONTENT_EVENTAccess().getDataSTRINGTerminalRuleCall_3_0(), semanticObject.getData());
-		feeder.accept(grammarAccess.getCONTENT_EVENTAccess().getStartSTRINGTerminalRuleCall_5_0(), semanticObject.getStart());
-		feeder.accept(grammarAccess.getCONTENT_EVENTAccess().getEndSTRINGTerminalRuleCall_7_0(), semanticObject.getEnd());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     CONTENU returns CONTENU
-	 *
-	 * Constraint:
-	 *     (desc=DESCRIPTION evta+=EVENTS_OR_TASKS*)
-	 */
-	protected void sequence_CONTENU(ISerializationContext context, CONTENU semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     DESCRIPTION returns DESCRIPTION
-	 *
-	 * Constraint:
-	 *     description=STRING
-	 */
-	protected void sequence_DESCRIPTION(ISerializationContext context, DESCRIPTION semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AgendaPackage.Literals.DESCRIPTION__DESCRIPTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgendaPackage.Literals.DESCRIPTION__DESCRIPTION));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDESCRIPTIONAccess().getDescriptionSTRINGTerminalRuleCall_1_0(), semanticObject.getDescription());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     EVENTS_OR_TASKS returns EVENTS_OR_TASKS
-	 *
-	 * Constraint:
-	 *     event_or_task+=EVENT
-	 */
-	protected void sequence_EVENTS_OR_TASKS(ISerializationContext context, EVENTS_OR_TASKS semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -163,47 +70,49 @@ public class AgendaSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     EVENT returns EVENT
 	 *
 	 * Constraint:
-	 *     (name=ID content_event=CONTENT_EVENT)
+	 *     (name=ID place=STRING date=STRING start=STRING end=STRING)
 	 */
 	protected void sequence_EVENT(ISerializationContext context, EVENT semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, AgendaPackage.Literals.EVENT__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgendaPackage.Literals.EVENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, AgendaPackage.Literals.EVENT__CONTENT_EVENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgendaPackage.Literals.EVENT__CONTENT_EVENT));
+			if (transientValues.isValueTransient(semanticObject, AgendaPackage.Literals.EVENT__PLACE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgendaPackage.Literals.EVENT__PLACE));
+			if (transientValues.isValueTransient(semanticObject, AgendaPackage.Literals.EVENT__DATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgendaPackage.Literals.EVENT__DATE));
+			if (transientValues.isValueTransient(semanticObject, AgendaPackage.Literals.EVENT__START) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgendaPackage.Literals.EVENT__START));
+			if (transientValues.isValueTransient(semanticObject, AgendaPackage.Literals.EVENT__END) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgendaPackage.Literals.EVENT__END));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getEVENTAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getEVENTAccess().getContent_eventCONTENT_EVENTParserRuleCall_3_0(), semanticObject.getContent_event());
+		feeder.accept(grammarAccess.getEVENTAccess().getPlaceSTRINGTerminalRuleCall_4_0(), semanticObject.getPlace());
+		feeder.accept(grammarAccess.getEVENTAccess().getDateSTRINGTerminalRuleCall_6_0(), semanticObject.getDate());
+		feeder.accept(grammarAccess.getEVENTAccess().getStartSTRINGTerminalRuleCall_8_0(), semanticObject.getStart());
+		feeder.accept(grammarAccess.getEVENTAccess().getEndSTRINGTerminalRuleCall_10_0(), semanticObject.getEnd());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     PREAMBULE returns PREAMBULE
+	 *     MODEL returns MODEL
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     List+=TYPE+
 	 */
-	protected void sequence_PREAMBULE(ISerializationContext context, PREAMBULE semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AgendaPackage.Literals.PREAMBULE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AgendaPackage.Literals.PREAMBULE__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPREAMBULEAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+	protected void sequence_MODEL(ISerializationContext context, MODEL semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     EVENTS_OR_TASKS returns TASK
 	 *     TASK returns TASK
 	 *
 	 * Constraint:
-	 *     (name=ID nameEvent=[EVENT|ID]? deadline=STRING)
+	 *     (name=ID refEvent=[EVENT|ID]? deadline=STRING)
 	 */
 	protected void sequence_TASK(ISerializationContext context, TASK semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

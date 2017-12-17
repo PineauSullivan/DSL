@@ -3,6 +3,7 @@
  */
 package org.xtext.univ.nantes.master.dsl.agenda;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +15,7 @@ package org.xtext.univ.nantes.master.dsl.agenda;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.TASK#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.TASK#getNameEvent <em>Name Event</em>}</li>
+ *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.TASK#getRefEvent <em>Ref Event</em>}</li>
  *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.TASK#getDeadline <em>Deadline</em>}</li>
  * </ul>
  *
@@ -22,7 +23,7 @@ package org.xtext.univ.nantes.master.dsl.agenda;
  * @model
  * @generated
  */
-public interface TASK extends EVENTS_OR_TASKS
+public interface TASK extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -51,30 +52,30 @@ public interface TASK extends EVENTS_OR_TASKS
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Name Event</b></em>' reference.
+   * Returns the value of the '<em><b>Ref Event</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name Event</em>' reference isn't clear,
+   * If the meaning of the '<em>Ref Event</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name Event</em>' reference.
-   * @see #setNameEvent(EVENT)
-   * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getTASK_NameEvent()
+   * @return the value of the '<em>Ref Event</em>' reference.
+   * @see #setRefEvent(EVENT)
+   * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getTASK_RefEvent()
    * @model
    * @generated
    */
-  EVENT getNameEvent();
+  EVENT getRefEvent();
 
   /**
-   * Sets the value of the '{@link org.xtext.univ.nantes.master.dsl.agenda.TASK#getNameEvent <em>Name Event</em>}' reference.
+   * Sets the value of the '{@link org.xtext.univ.nantes.master.dsl.agenda.TASK#getRefEvent <em>Ref Event</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name Event</em>' reference.
-   * @see #getNameEvent()
+   * @param value the new value of the '<em>Ref Event</em>' reference.
+   * @see #getRefEvent()
    * @generated
    */
-  void setNameEvent(EVENT value);
+  void setRefEvent(EVENT value);
 
   /**
    * Returns the value of the '<em><b>Deadline</b></em>' attribute.

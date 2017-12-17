@@ -6,36 +6,26 @@
     complianceLevel="6.0" copyrightFields="false" runtimeVersion="2.12">
   <genPackages prefix="Agenda" basePackage="org.xtext.univ.nantes.master.dsl" disposableProviderFactory="true"
       fileExtensions="agenda" ecorePackage="Agenda.ecore#/">
+    <genClasses ecoreClass="Agenda.ecore#//MODEL">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Agenda.ecore#//MODEL/List"/>
+    </genClasses>
+    <genClasses ecoreClass="Agenda.ecore#//TYPE"/>
     <genClasses ecoreClass="Agenda.ecore#//AGENDA">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Agenda.ecore#//AGENDA/pream"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Agenda.ecore#//AGENDA/contenu"/>
-    </genClasses>
-    <genClasses ecoreClass="Agenda.ecore#//PREAMBULE">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Agenda.ecore#//PREAMBULE/name"/>
-    </genClasses>
-    <genClasses ecoreClass="Agenda.ecore#//CONTENU">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Agenda.ecore#//CONTENU/desc"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Agenda.ecore#//CONTENU/evta"/>
-    </genClasses>
-    <genClasses ecoreClass="Agenda.ecore#//DESCRIPTION">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Agenda.ecore#//DESCRIPTION/description"/>
-    </genClasses>
-    <genClasses ecoreClass="Agenda.ecore#//EVENTS_OR_TASKS">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Agenda.ecore#//EVENTS_OR_TASKS/event_or_task"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Agenda.ecore#//AGENDA/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Agenda.ecore#//AGENDA/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Agenda.ecore#//AGENDA/event"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Agenda.ecore#//AGENDA/task"/>
     </genClasses>
     <genClasses ecoreClass="Agenda.ecore#//EVENT">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Agenda.ecore#//EVENT/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Agenda.ecore#//EVENT/content_event"/>
-    </genClasses>
-    <genClasses ecoreClass="Agenda.ecore#//CONTENT_EVENT">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Agenda.ecore#//CONTENT_EVENT/place"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Agenda.ecore#//CONTENT_EVENT/data"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Agenda.ecore#//CONTENT_EVENT/start"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Agenda.ecore#//CONTENT_EVENT/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Agenda.ecore#//EVENT/place"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Agenda.ecore#//EVENT/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Agenda.ecore#//EVENT/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Agenda.ecore#//EVENT/end"/>
     </genClasses>
     <genClasses ecoreClass="Agenda.ecore#//TASK">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Agenda.ecore#//TASK/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Agenda.ecore#//TASK/nameEvent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Agenda.ecore#//TASK/refEvent"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Agenda.ecore#//TASK/deadline"/>
     </genClasses>
   </genPackages>

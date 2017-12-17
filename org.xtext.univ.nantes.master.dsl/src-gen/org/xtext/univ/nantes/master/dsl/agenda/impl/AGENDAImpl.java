@@ -3,19 +3,25 @@
  */
 package org.xtext.univ.nantes.master.dsl.agenda.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.univ.nantes.master.dsl.agenda.AGENDA;
 import org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage;
-import org.xtext.univ.nantes.master.dsl.agenda.CONTENU;
-import org.xtext.univ.nantes.master.dsl.agenda.PREAMBULE;
+import org.xtext.univ.nantes.master.dsl.agenda.EVENT;
+import org.xtext.univ.nantes.master.dsl.agenda.TASK;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,33 +31,75 @@ import org.xtext.univ.nantes.master.dsl.agenda.PREAMBULE;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.impl.AGENDAImpl#getPream <em>Pream</em>}</li>
- *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.impl.AGENDAImpl#getContenu <em>Contenu</em>}</li>
+ *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.impl.AGENDAImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.impl.AGENDAImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.impl.AGENDAImpl#getEvent <em>Event</em>}</li>
+ *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.impl.AGENDAImpl#getTask <em>Task</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AGENDAImpl extends MinimalEObjectImpl.Container implements AGENDA
+public class AGENDAImpl extends TYPEImpl implements AGENDA
 {
   /**
-   * The cached value of the '{@link #getPream() <em>Pream</em>}' containment reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPream()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected PREAMBULE pream;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getContenu() <em>Contenu</em>}' containment reference.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getContenu()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected CONTENU contenu;
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected static final String DESCRIPTION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected String description = DESCRIPTION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getEvent() <em>Event</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEvent()
+   * @generated
+   * @ordered
+   */
+  protected EList<EVENT> event;
+
+  /**
+   * The cached value of the '{@link #getTask() <em>Task</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTask()
+   * @generated
+   * @ordered
+   */
+  protected EList<TASK> task;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,9 +127,9 @@ public class AGENDAImpl extends MinimalEObjectImpl.Container implements AGENDA
    * <!-- end-user-doc -->
    * @generated
    */
-  public PREAMBULE getPream()
+  public String getName()
   {
-    return pream;
+    return name;
   }
 
   /**
@@ -89,16 +137,12 @@ public class AGENDAImpl extends MinimalEObjectImpl.Container implements AGENDA
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPream(PREAMBULE newPream, NotificationChain msgs)
+  public void setName(String newName)
   {
-    PREAMBULE oldPream = pream;
-    pream = newPream;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AgendaPackage.AGENDA__PREAM, oldPream, newPream);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, AgendaPackage.AGENDA__NAME, oldName, name));
   }
 
   /**
@@ -106,20 +150,9 @@ public class AGENDAImpl extends MinimalEObjectImpl.Container implements AGENDA
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPream(PREAMBULE newPream)
+  public String getDescription()
   {
-    if (newPream != pream)
-    {
-      NotificationChain msgs = null;
-      if (pream != null)
-        msgs = ((InternalEObject)pream).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AgendaPackage.AGENDA__PREAM, null, msgs);
-      if (newPream != null)
-        msgs = ((InternalEObject)newPream).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AgendaPackage.AGENDA__PREAM, null, msgs);
-      msgs = basicSetPream(newPream, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AgendaPackage.AGENDA__PREAM, newPream, newPream));
+    return description;
   }
 
   /**
@@ -127,26 +160,12 @@ public class AGENDAImpl extends MinimalEObjectImpl.Container implements AGENDA
    * <!-- end-user-doc -->
    * @generated
    */
-  public CONTENU getContenu()
+  public void setDescription(String newDescription)
   {
-    return contenu;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetContenu(CONTENU newContenu, NotificationChain msgs)
-  {
-    CONTENU oldContenu = contenu;
-    contenu = newContenu;
+    String oldDescription = description;
+    description = newDescription;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AgendaPackage.AGENDA__CONTENU, oldContenu, newContenu);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, AgendaPackage.AGENDA__DESCRIPTION, oldDescription, description));
   }
 
   /**
@@ -154,20 +173,27 @@ public class AGENDAImpl extends MinimalEObjectImpl.Container implements AGENDA
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setContenu(CONTENU newContenu)
+  public EList<EVENT> getEvent()
   {
-    if (newContenu != contenu)
+    if (event == null)
     {
-      NotificationChain msgs = null;
-      if (contenu != null)
-        msgs = ((InternalEObject)contenu).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AgendaPackage.AGENDA__CONTENU, null, msgs);
-      if (newContenu != null)
-        msgs = ((InternalEObject)newContenu).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AgendaPackage.AGENDA__CONTENU, null, msgs);
-      msgs = basicSetContenu(newContenu, msgs);
-      if (msgs != null) msgs.dispatch();
+      event = new EObjectContainmentEList<EVENT>(EVENT.class, this, AgendaPackage.AGENDA__EVENT);
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AgendaPackage.AGENDA__CONTENU, newContenu, newContenu));
+    return event;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<TASK> getTask()
+  {
+    if (task == null)
+    {
+      task = new EObjectContainmentEList<TASK>(TASK.class, this, AgendaPackage.AGENDA__TASK);
+    }
+    return task;
   }
 
   /**
@@ -180,10 +206,10 @@ public class AGENDAImpl extends MinimalEObjectImpl.Container implements AGENDA
   {
     switch (featureID)
     {
-      case AgendaPackage.AGENDA__PREAM:
-        return basicSetPream(null, msgs);
-      case AgendaPackage.AGENDA__CONTENU:
-        return basicSetContenu(null, msgs);
+      case AgendaPackage.AGENDA__EVENT:
+        return ((InternalEList<?>)getEvent()).basicRemove(otherEnd, msgs);
+      case AgendaPackage.AGENDA__TASK:
+        return ((InternalEList<?>)getTask()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -198,10 +224,14 @@ public class AGENDAImpl extends MinimalEObjectImpl.Container implements AGENDA
   {
     switch (featureID)
     {
-      case AgendaPackage.AGENDA__PREAM:
-        return getPream();
-      case AgendaPackage.AGENDA__CONTENU:
-        return getContenu();
+      case AgendaPackage.AGENDA__NAME:
+        return getName();
+      case AgendaPackage.AGENDA__DESCRIPTION:
+        return getDescription();
+      case AgendaPackage.AGENDA__EVENT:
+        return getEvent();
+      case AgendaPackage.AGENDA__TASK:
+        return getTask();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -211,16 +241,25 @@ public class AGENDAImpl extends MinimalEObjectImpl.Container implements AGENDA
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case AgendaPackage.AGENDA__PREAM:
-        setPream((PREAMBULE)newValue);
+      case AgendaPackage.AGENDA__NAME:
+        setName((String)newValue);
         return;
-      case AgendaPackage.AGENDA__CONTENU:
-        setContenu((CONTENU)newValue);
+      case AgendaPackage.AGENDA__DESCRIPTION:
+        setDescription((String)newValue);
+        return;
+      case AgendaPackage.AGENDA__EVENT:
+        getEvent().clear();
+        getEvent().addAll((Collection<? extends EVENT>)newValue);
+        return;
+      case AgendaPackage.AGENDA__TASK:
+        getTask().clear();
+        getTask().addAll((Collection<? extends TASK>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,11 +275,17 @@ public class AGENDAImpl extends MinimalEObjectImpl.Container implements AGENDA
   {
     switch (featureID)
     {
-      case AgendaPackage.AGENDA__PREAM:
-        setPream((PREAMBULE)null);
+      case AgendaPackage.AGENDA__NAME:
+        setName(NAME_EDEFAULT);
         return;
-      case AgendaPackage.AGENDA__CONTENU:
-        setContenu((CONTENU)null);
+      case AgendaPackage.AGENDA__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
+        return;
+      case AgendaPackage.AGENDA__EVENT:
+        getEvent().clear();
+        return;
+      case AgendaPackage.AGENDA__TASK:
+        getTask().clear();
         return;
     }
     super.eUnset(featureID);
@@ -256,12 +301,35 @@ public class AGENDAImpl extends MinimalEObjectImpl.Container implements AGENDA
   {
     switch (featureID)
     {
-      case AgendaPackage.AGENDA__PREAM:
-        return pream != null;
-      case AgendaPackage.AGENDA__CONTENU:
-        return contenu != null;
+      case AgendaPackage.AGENDA__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AgendaPackage.AGENDA__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+      case AgendaPackage.AGENDA__EVENT:
+        return event != null && !event.isEmpty();
+      case AgendaPackage.AGENDA__TASK:
+        return task != null && !task.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", description: ");
+    result.append(description);
+    result.append(')');
+    return result.toString();
   }
 
 } //AGENDAImpl

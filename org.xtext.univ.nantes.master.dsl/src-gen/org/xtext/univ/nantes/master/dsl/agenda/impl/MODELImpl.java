@@ -18,40 +18,40 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage;
-import org.xtext.univ.nantes.master.dsl.agenda.EVENT;
-import org.xtext.univ.nantes.master.dsl.agenda.EVENTS_OR_TASKS;
+import org.xtext.univ.nantes.master.dsl.agenda.MODEL;
+import org.xtext.univ.nantes.master.dsl.agenda.TYPE;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>EVENTS OR TASKS</b></em>'.
+ * An implementation of the model object '<em><b>MODEL</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.impl.EVENTS_OR_TASKSImpl#getEvent_or_task <em>Event or task</em>}</li>
+ *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.impl.MODELImpl#getList <em>List</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EVENTS_OR_TASKSImpl extends MinimalEObjectImpl.Container implements EVENTS_OR_TASKS
+public class MODELImpl extends MinimalEObjectImpl.Container implements MODEL
 {
   /**
-   * The cached value of the '{@link #getEvent_or_task() <em>Event or task</em>}' containment reference list.
+   * The cached value of the '{@link #getList() <em>List</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEvent_or_task()
+   * @see #getList()
    * @generated
    * @ordered
    */
-  protected EList<EVENT> event_or_task;
+  protected EList<TYPE> list;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected EVENTS_OR_TASKSImpl()
+  protected MODELImpl()
   {
     super();
   }
@@ -64,7 +64,7 @@ public class EVENTS_OR_TASKSImpl extends MinimalEObjectImpl.Container implements
   @Override
   protected EClass eStaticClass()
   {
-    return AgendaPackage.Literals.EVENTS_OR_TASKS;
+    return AgendaPackage.Literals.MODEL;
   }
 
   /**
@@ -72,13 +72,13 @@ public class EVENTS_OR_TASKSImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EVENT> getEvent_or_task()
+  public EList<TYPE> getList()
   {
-    if (event_or_task == null)
+    if (list == null)
     {
-      event_or_task = new EObjectContainmentEList<EVENT>(EVENT.class, this, AgendaPackage.EVENTS_OR_TASKS__EVENT_OR_TASK);
+      list = new EObjectContainmentEList<TYPE>(TYPE.class, this, AgendaPackage.MODEL__LIST);
     }
-    return event_or_task;
+    return list;
   }
 
   /**
@@ -91,8 +91,8 @@ public class EVENTS_OR_TASKSImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case AgendaPackage.EVENTS_OR_TASKS__EVENT_OR_TASK:
-        return ((InternalEList<?>)getEvent_or_task()).basicRemove(otherEnd, msgs);
+      case AgendaPackage.MODEL__LIST:
+        return ((InternalEList<?>)getList()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +107,8 @@ public class EVENTS_OR_TASKSImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case AgendaPackage.EVENTS_OR_TASKS__EVENT_OR_TASK:
-        return getEvent_or_task();
+      case AgendaPackage.MODEL__LIST:
+        return getList();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,9 +124,9 @@ public class EVENTS_OR_TASKSImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case AgendaPackage.EVENTS_OR_TASKS__EVENT_OR_TASK:
-        getEvent_or_task().clear();
-        getEvent_or_task().addAll((Collection<? extends EVENT>)newValue);
+      case AgendaPackage.MODEL__LIST:
+        getList().clear();
+        getList().addAll((Collection<? extends TYPE>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +142,8 @@ public class EVENTS_OR_TASKSImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case AgendaPackage.EVENTS_OR_TASKS__EVENT_OR_TASK:
-        getEvent_or_task().clear();
+      case AgendaPackage.MODEL__LIST:
+        getList().clear();
         return;
     }
     super.eUnset(featureID);
@@ -159,10 +159,10 @@ public class EVENTS_OR_TASKSImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case AgendaPackage.EVENTS_OR_TASKS__EVENT_OR_TASK:
-        return event_or_task != null && !event_or_task.isEmpty();
+      case AgendaPackage.MODEL__LIST:
+        return list != null && !list.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //EVENTS_OR_TASKSImpl
+} //MODELImpl

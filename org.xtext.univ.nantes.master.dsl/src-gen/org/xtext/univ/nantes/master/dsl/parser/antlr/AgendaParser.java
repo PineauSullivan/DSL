@@ -27,7 +27,7 @@ public class AgendaParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "AGENDA";
+		return "MODEL";
 	}
 
 	public AgendaGrammarAccess getGrammarAccess() {

@@ -3,7 +3,7 @@
  */
 package org.xtext.univ.nantes.master.dsl.agenda;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,66 +14,100 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.AGENDA#getPream <em>Pream</em>}</li>
- *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.AGENDA#getContenu <em>Contenu</em>}</li>
+ *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.AGENDA#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.AGENDA#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.AGENDA#getEvent <em>Event</em>}</li>
+ *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.AGENDA#getTask <em>Task</em>}</li>
  * </ul>
  *
  * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getAGENDA()
  * @model
  * @generated
  */
-public interface AGENDA extends EObject
+public interface AGENDA extends TYPE
 {
   /**
-   * Returns the value of the '<em><b>Pream</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Pream</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Pream</em>' containment reference.
-   * @see #setPream(PREAMBULE)
-   * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getAGENDA_Pream()
-   * @model containment="true"
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getAGENDA_Name()
+   * @model
    * @generated
    */
-  PREAMBULE getPream();
+  String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.univ.nantes.master.dsl.agenda.AGENDA#getPream <em>Pream</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.univ.nantes.master.dsl.agenda.AGENDA#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Pream</em>' containment reference.
-   * @see #getPream()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setPream(PREAMBULE value);
+  void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Contenu</b></em>' containment reference.
+   * Returns the value of the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Contenu</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Description</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Contenu</em>' containment reference.
-   * @see #setContenu(CONTENU)
-   * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getAGENDA_Contenu()
+   * @return the value of the '<em>Description</em>' attribute.
+   * @see #setDescription(String)
+   * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getAGENDA_Description()
+   * @model
+   * @generated
+   */
+  String getDescription();
+
+  /**
+   * Sets the value of the '{@link org.xtext.univ.nantes.master.dsl.agenda.AGENDA#getDescription <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Description</em>' attribute.
+   * @see #getDescription()
+   * @generated
+   */
+  void setDescription(String value);
+
+  /**
+   * Returns the value of the '<em><b>Event</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.univ.nantes.master.dsl.agenda.EVENT}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Event</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Event</em>' containment reference list.
+   * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getAGENDA_Event()
    * @model containment="true"
    * @generated
    */
-  CONTENU getContenu();
+  EList<EVENT> getEvent();
 
   /**
-   * Sets the value of the '{@link org.xtext.univ.nantes.master.dsl.agenda.AGENDA#getContenu <em>Contenu</em>}' containment reference.
+   * Returns the value of the '<em><b>Task</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.univ.nantes.master.dsl.agenda.TASK}.
    * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Task</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Contenu</em>' containment reference.
-   * @see #getContenu()
+   * @return the value of the '<em>Task</em>' containment reference list.
+   * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getAGENDA_Task()
+   * @model containment="true"
    * @generated
    */
-  void setContenu(CONTENU value);
+  EList<TASK> getTask();
 
 } // AGENDA

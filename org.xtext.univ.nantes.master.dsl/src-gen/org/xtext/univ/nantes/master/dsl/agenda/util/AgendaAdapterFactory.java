@@ -76,39 +76,24 @@ public class AgendaAdapterFactory extends AdapterFactoryImpl
     new AgendaSwitch<Adapter>()
     {
       @Override
+      public Adapter caseMODEL(MODEL object)
+      {
+        return createMODELAdapter();
+      }
+      @Override
+      public Adapter caseTYPE(TYPE object)
+      {
+        return createTYPEAdapter();
+      }
+      @Override
       public Adapter caseAGENDA(AGENDA object)
       {
         return createAGENDAAdapter();
       }
       @Override
-      public Adapter casePREAMBULE(PREAMBULE object)
-      {
-        return createPREAMBULEAdapter();
-      }
-      @Override
-      public Adapter caseCONTENU(CONTENU object)
-      {
-        return createCONTENUAdapter();
-      }
-      @Override
-      public Adapter caseDESCRIPTION(DESCRIPTION object)
-      {
-        return createDESCRIPTIONAdapter();
-      }
-      @Override
-      public Adapter caseEVENTS_OR_TASKS(EVENTS_OR_TASKS object)
-      {
-        return createEVENTS_OR_TASKSAdapter();
-      }
-      @Override
       public Adapter caseEVENT(EVENT object)
       {
         return createEVENTAdapter();
-      }
-      @Override
-      public Adapter caseCONTENT_EVENT(CONTENT_EVENT object)
-      {
-        return createCONTENT_EVENTAdapter();
       }
       @Override
       public Adapter caseTASK(TASK object)
@@ -138,6 +123,36 @@ public class AgendaAdapterFactory extends AdapterFactoryImpl
 
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.univ.nantes.master.dsl.agenda.MODEL <em>MODEL</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.univ.nantes.master.dsl.agenda.MODEL
+   * @generated
+   */
+  public Adapter createMODELAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.univ.nantes.master.dsl.agenda.TYPE <em>TYPE</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.univ.nantes.master.dsl.agenda.TYPE
+   * @generated
+   */
+  public Adapter createTYPEAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.univ.nantes.master.dsl.agenda.AGENDA <em>AGENDA</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -153,66 +168,6 @@ public class AgendaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.univ.nantes.master.dsl.agenda.PREAMBULE <em>PREAMBULE</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.univ.nantes.master.dsl.agenda.PREAMBULE
-   * @generated
-   */
-  public Adapter createPREAMBULEAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.univ.nantes.master.dsl.agenda.CONTENU <em>CONTENU</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.univ.nantes.master.dsl.agenda.CONTENU
-   * @generated
-   */
-  public Adapter createCONTENUAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.univ.nantes.master.dsl.agenda.DESCRIPTION <em>DESCRIPTION</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.univ.nantes.master.dsl.agenda.DESCRIPTION
-   * @generated
-   */
-  public Adapter createDESCRIPTIONAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.univ.nantes.master.dsl.agenda.EVENTS_OR_TASKS <em>EVENTS OR TASKS</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.univ.nantes.master.dsl.agenda.EVENTS_OR_TASKS
-   * @generated
-   */
-  public Adapter createEVENTS_OR_TASKSAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.univ.nantes.master.dsl.agenda.EVENT <em>EVENT</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -223,21 +178,6 @@ public class AgendaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createEVENTAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.univ.nantes.master.dsl.agenda.CONTENT_EVENT <em>CONTENT EVENT</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.univ.nantes.master.dsl.agenda.CONTENT_EVENT
-   * @generated
-   */
-  public Adapter createCONTENT_EVENTAdapter()
   {
     return null;
   }

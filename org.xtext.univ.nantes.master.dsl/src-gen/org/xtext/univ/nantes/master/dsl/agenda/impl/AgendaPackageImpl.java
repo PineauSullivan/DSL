@@ -26,6 +26,20 @@ public class AgendaPackageImpl extends EPackageImpl implements AgendaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass modelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass agendaEClass = null;
 
   /**
@@ -33,42 +47,7 @@ public class AgendaPackageImpl extends EPackageImpl implements AgendaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass preambuleEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass contenuEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass descriptionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass eventS_OR_TASKSEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass eventEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass contenT_EVENTEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -145,6 +124,36 @@ public class AgendaPackageImpl extends EPackageImpl implements AgendaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getMODEL()
+  {
+    return modelEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMODEL_List()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTYPE()
+  {
+    return typeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAGENDA()
   {
     return agendaEClass;
@@ -155,9 +164,9 @@ public class AgendaPackageImpl extends EPackageImpl implements AgendaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAGENDA_Pream()
+  public EAttribute getAGENDA_Name()
   {
-    return (EReference)agendaEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)agendaEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -165,9 +174,9 @@ public class AgendaPackageImpl extends EPackageImpl implements AgendaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAGENDA_Contenu()
+  public EAttribute getAGENDA_Description()
   {
-    return (EReference)agendaEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)agendaEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -175,9 +184,9 @@ public class AgendaPackageImpl extends EPackageImpl implements AgendaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getPREAMBULE()
+  public EReference getAGENDA_Event()
   {
-    return preambuleEClass;
+    return (EReference)agendaEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -185,79 +194,9 @@ public class AgendaPackageImpl extends EPackageImpl implements AgendaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPREAMBULE_Name()
+  public EReference getAGENDA_Task()
   {
-    return (EAttribute)preambuleEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getCONTENU()
-  {
-    return contenuEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getCONTENU_Desc()
-  {
-    return (EReference)contenuEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getCONTENU_Evta()
-  {
-    return (EReference)contenuEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getDESCRIPTION()
-  {
-    return descriptionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getDESCRIPTION_Description()
-  {
-    return (EAttribute)descriptionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getEVENTS_OR_TASKS()
-  {
-    return eventS_OR_TASKSEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getEVENTS_OR_TASKS_Event_or_task()
-  {
-    return (EReference)eventS_OR_TASKSEClass.getEStructuralFeatures().get(0);
+    return (EReference)agendaEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -285,9 +224,9 @@ public class AgendaPackageImpl extends EPackageImpl implements AgendaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEVENT_Content_event()
+  public EAttribute getEVENT_Place()
   {
-    return (EReference)eventEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)eventEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -295,9 +234,9 @@ public class AgendaPackageImpl extends EPackageImpl implements AgendaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCONTENT_EVENT()
+  public EAttribute getEVENT_Date()
   {
-    return contenT_EVENTEClass;
+    return (EAttribute)eventEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -305,9 +244,9 @@ public class AgendaPackageImpl extends EPackageImpl implements AgendaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCONTENT_EVENT_Place()
+  public EAttribute getEVENT_Start()
   {
-    return (EAttribute)contenT_EVENTEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)eventEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -315,29 +254,9 @@ public class AgendaPackageImpl extends EPackageImpl implements AgendaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCONTENT_EVENT_Data()
+  public EAttribute getEVENT_End()
   {
-    return (EAttribute)contenT_EVENTEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getCONTENT_EVENT_Start()
-  {
-    return (EAttribute)contenT_EVENTEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getCONTENT_EVENT_End()
-  {
-    return (EAttribute)contenT_EVENTEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)eventEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -365,7 +284,7 @@ public class AgendaPackageImpl extends EPackageImpl implements AgendaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTASK_NameEvent()
+  public EReference getTASK_RefEvent()
   {
     return (EReference)taskEClass.getEStructuralFeatures().get(1);
   }
@@ -410,36 +329,27 @@ public class AgendaPackageImpl extends EPackageImpl implements AgendaPackage
     isCreated = true;
 
     // Create classes and their features
+    modelEClass = createEClass(MODEL);
+    createEReference(modelEClass, MODEL__LIST);
+
+    typeEClass = createEClass(TYPE);
+
     agendaEClass = createEClass(AGENDA);
-    createEReference(agendaEClass, AGENDA__PREAM);
-    createEReference(agendaEClass, AGENDA__CONTENU);
-
-    preambuleEClass = createEClass(PREAMBULE);
-    createEAttribute(preambuleEClass, PREAMBULE__NAME);
-
-    contenuEClass = createEClass(CONTENU);
-    createEReference(contenuEClass, CONTENU__DESC);
-    createEReference(contenuEClass, CONTENU__EVTA);
-
-    descriptionEClass = createEClass(DESCRIPTION);
-    createEAttribute(descriptionEClass, DESCRIPTION__DESCRIPTION);
-
-    eventS_OR_TASKSEClass = createEClass(EVENTS_OR_TASKS);
-    createEReference(eventS_OR_TASKSEClass, EVENTS_OR_TASKS__EVENT_OR_TASK);
+    createEAttribute(agendaEClass, AGENDA__NAME);
+    createEAttribute(agendaEClass, AGENDA__DESCRIPTION);
+    createEReference(agendaEClass, AGENDA__EVENT);
+    createEReference(agendaEClass, AGENDA__TASK);
 
     eventEClass = createEClass(EVENT);
     createEAttribute(eventEClass, EVENT__NAME);
-    createEReference(eventEClass, EVENT__CONTENT_EVENT);
-
-    contenT_EVENTEClass = createEClass(CONTENT_EVENT);
-    createEAttribute(contenT_EVENTEClass, CONTENT_EVENT__PLACE);
-    createEAttribute(contenT_EVENTEClass, CONTENT_EVENT__DATA);
-    createEAttribute(contenT_EVENTEClass, CONTENT_EVENT__START);
-    createEAttribute(contenT_EVENTEClass, CONTENT_EVENT__END);
+    createEAttribute(eventEClass, EVENT__PLACE);
+    createEAttribute(eventEClass, EVENT__DATE);
+    createEAttribute(eventEClass, EVENT__START);
+    createEAttribute(eventEClass, EVENT__END);
 
     taskEClass = createEClass(TASK);
     createEAttribute(taskEClass, TASK__NAME);
-    createEReference(taskEClass, TASK__NAME_EVENT);
+    createEReference(taskEClass, TASK__REF_EVENT);
     createEAttribute(taskEClass, TASK__DEADLINE);
   }
 
@@ -472,39 +382,30 @@ public class AgendaPackageImpl extends EPackageImpl implements AgendaPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    taskEClass.getESuperTypes().add(this.getEVENTS_OR_TASKS());
+    agendaEClass.getESuperTypes().add(this.getTYPE());
 
     // Initialize classes and features; add operations and parameters
+    initEClass(modelEClass, org.xtext.univ.nantes.master.dsl.agenda.MODEL.class, "MODEL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMODEL_List(), this.getTYPE(), null, "List", null, 0, -1, org.xtext.univ.nantes.master.dsl.agenda.MODEL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(typeEClass, org.xtext.univ.nantes.master.dsl.agenda.TYPE.class, "TYPE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(agendaEClass, org.xtext.univ.nantes.master.dsl.agenda.AGENDA.class, "AGENDA", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAGENDA_Pream(), this.getPREAMBULE(), null, "pream", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.AGENDA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAGENDA_Contenu(), this.getCONTENU(), null, "contenu", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.AGENDA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(preambuleEClass, org.xtext.univ.nantes.master.dsl.agenda.PREAMBULE.class, "PREAMBULE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPREAMBULE_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.PREAMBULE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(contenuEClass, org.xtext.univ.nantes.master.dsl.agenda.CONTENU.class, "CONTENU", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCONTENU_Desc(), this.getDESCRIPTION(), null, "desc", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.CONTENU.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCONTENU_Evta(), this.getEVENTS_OR_TASKS(), null, "evta", null, 0, -1, org.xtext.univ.nantes.master.dsl.agenda.CONTENU.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(descriptionEClass, org.xtext.univ.nantes.master.dsl.agenda.DESCRIPTION.class, "DESCRIPTION", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDESCRIPTION_Description(), ecorePackage.getEString(), "description", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.DESCRIPTION.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(eventS_OR_TASKSEClass, org.xtext.univ.nantes.master.dsl.agenda.EVENTS_OR_TASKS.class, "EVENTS_OR_TASKS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEVENTS_OR_TASKS_Event_or_task(), this.getEVENT(), null, "event_or_task", null, 0, -1, org.xtext.univ.nantes.master.dsl.agenda.EVENTS_OR_TASKS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAGENDA_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.AGENDA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAGENDA_Description(), ecorePackage.getEString(), "description", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.AGENDA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAGENDA_Event(), this.getEVENT(), null, "event", null, 0, -1, org.xtext.univ.nantes.master.dsl.agenda.AGENDA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAGENDA_Task(), this.getTASK(), null, "task", null, 0, -1, org.xtext.univ.nantes.master.dsl.agenda.AGENDA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eventEClass, org.xtext.univ.nantes.master.dsl.agenda.EVENT.class, "EVENT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEVENT_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.EVENT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEVENT_Content_event(), this.getCONTENT_EVENT(), null, "content_event", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.EVENT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(contenT_EVENTEClass, org.xtext.univ.nantes.master.dsl.agenda.CONTENT_EVENT.class, "CONTENT_EVENT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCONTENT_EVENT_Place(), ecorePackage.getEString(), "place", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.CONTENT_EVENT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCONTENT_EVENT_Data(), ecorePackage.getEString(), "data", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.CONTENT_EVENT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCONTENT_EVENT_Start(), ecorePackage.getEString(), "start", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.CONTENT_EVENT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCONTENT_EVENT_End(), ecorePackage.getEString(), "end", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.CONTENT_EVENT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEVENT_Place(), ecorePackage.getEString(), "place", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.EVENT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEVENT_Date(), ecorePackage.getEString(), "date", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.EVENT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEVENT_Start(), ecorePackage.getEString(), "start", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.EVENT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEVENT_End(), ecorePackage.getEString(), "end", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.EVENT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(taskEClass, org.xtext.univ.nantes.master.dsl.agenda.TASK.class, "TASK", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTASK_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.TASK.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTASK_NameEvent(), this.getEVENT(), null, "nameEvent", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.TASK.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTASK_RefEvent(), this.getEVENT(), null, "refEvent", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.TASK.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTASK_Deadline(), ecorePackage.getEString(), "deadline", null, 0, 1, org.xtext.univ.nantes.master.dsl.agenda.TASK.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource

@@ -43,7 +43,7 @@ import org.xtext.univ.nantes.master.dsl.services.AgendaGrammarAccess;
 
     @Override
     protected String getFirstRuleName() {
-    	return "AGENDA";
+    	return "MODEL";
    	}
 
    	@Override
@@ -59,6 +59,67 @@ import org.xtext.univ.nantes.master.dsl.services.AgendaGrammarAccess;
         appendSkippedTokens();
     }
 }
+
+// Entry rule entryRuleMODEL
+entryRuleMODEL returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMODELRule()); }
+	iv_ruleMODEL=ruleMODEL
+	{ $current=$iv_ruleMODEL.current; }
+	EOF;
+
+// Rule MODEL
+ruleMODEL returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				newCompositeNode(grammarAccess.getMODELAccess().getListTYPEParserRuleCall_0());
+			}
+			lv_List_0_0=ruleTYPE
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getMODELRule());
+				}
+				add(
+					$current,
+					"List",
+					lv_List_0_0,
+					"org.xtext.univ.nantes.master.dsl.Agenda.TYPE");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)*
+;
+
+// Entry rule entryRuleTYPE
+entryRuleTYPE returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTYPERule()); }
+	iv_ruleTYPE=ruleTYPE
+	{ $current=$iv_ruleTYPE.current; }
+	EOF;
+
+// Rule TYPE
+ruleTYPE returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	{
+		newCompositeNode(grammarAccess.getTYPEAccess().getAGENDAParserRuleCall());
+	}
+	this_AGENDA_0=ruleAGENDA
+	{
+		$current = $this_AGENDA_0.current;
+		afterParserOrEnumRuleCall();
+	}
+;
 
 // Entry rule entryRuleAGENDA
 entryRuleAGENDA returns [EObject current=null]:
@@ -76,84 +137,19 @@ ruleAGENDA returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAGENDAAccess().getPreamPREAMBULEParserRuleCall_0_0());
-				}
-				lv_pream_0_0=rulePREAMBULE
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAGENDARule());
-					}
-					set(
-						$current,
-						"pream",
-						lv_pream_0_0,
-						"org.xtext.univ.nantes.master.dsl.Agenda.PREAMBULE");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_1='('
-		{
-			newLeafNode(otherlv_1, grammarAccess.getAGENDAAccess().getLeftParenthesisKeyword_1());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAGENDAAccess().getContenuCONTENUParserRuleCall_2_0());
-				}
-				lv_contenu_2_0=ruleCONTENU
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAGENDARule());
-					}
-					set(
-						$current,
-						"contenu",
-						lv_contenu_2_0,
-						"org.xtext.univ.nantes.master.dsl.Agenda.CONTENU");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_3=')'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getAGENDAAccess().getRightParenthesisKeyword_3());
-		}
-	)?
-;
-
-// Entry rule entryRulePREAMBULE
-entryRulePREAMBULE returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getPREAMBULERule()); }
-	iv_rulePREAMBULE=rulePREAMBULE
-	{ $current=$iv_rulePREAMBULE.current; }
-	EOF;
-
-// Rule PREAMBULE
-rulePREAMBULE returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
 		otherlv_0='Agenda'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getPREAMBULEAccess().getAgendaKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getAGENDAAccess().getAgendaKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getPREAMBULEAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getAGENDAAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getPREAMBULERule());
+						$current = createModelElement(grammarAccess.getAGENDARule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -163,150 +159,73 @@ rulePREAMBULE returns [EObject current=null]
 				}
 			)
 		)
-	)
-;
-
-// Entry rule entryRuleCONTENU
-entryRuleCONTENU returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getCONTENURule()); }
-	iv_ruleCONTENU=ruleCONTENU
-	{ $current=$iv_ruleCONTENU.current; }
-	EOF;
-
-// Rule CONTENU
-ruleCONTENU returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getCONTENUAccess().getDescDESCRIPTIONParserRuleCall_0_0());
-				}
-				lv_desc_0_0=ruleDESCRIPTION
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCONTENURule());
-					}
-					set(
-						$current,
-						"desc",
-						lv_desc_0_0,
-						"org.xtext.univ.nantes.master.dsl.Agenda.DESCRIPTION");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getCONTENUAccess().getEvtaEVENTS_OR_TASKSParserRuleCall_1_0());
-				}
-				lv_evta_1_0=ruleEVENTS_OR_TASKS
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCONTENURule());
-					}
-					add(
-						$current,
-						"evta",
-						lv_evta_1_0,
-						"org.xtext.univ.nantes.master.dsl.Agenda.EVENTS_OR_TASKS");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-	)
-;
-
-// Entry rule entryRuleDESCRIPTION
-entryRuleDESCRIPTION returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getDESCRIPTIONRule()); }
-	iv_ruleDESCRIPTION=ruleDESCRIPTION
-	{ $current=$iv_ruleDESCRIPTION.current; }
-	EOF;
-
-// Rule DESCRIPTION
-ruleDESCRIPTION returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='Description'
+		otherlv_2='('
 		{
-			newLeafNode(otherlv_0, grammarAccess.getDESCRIPTIONAccess().getDescriptionKeyword_0());
+			newLeafNode(otherlv_2, grammarAccess.getAGENDAAccess().getLeftParenthesisKeyword_2());
+		}
+		otherlv_3='Description'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getAGENDAAccess().getDescriptionKeyword_3());
 		}
 		(
 			(
-				lv_description_1_0=RULE_STRING
+				lv_description_4_0=RULE_STRING
 				{
-					newLeafNode(lv_description_1_0, grammarAccess.getDESCRIPTIONAccess().getDescriptionSTRINGTerminalRuleCall_1_0());
+					newLeafNode(lv_description_4_0, grammarAccess.getAGENDAAccess().getDescriptionSTRINGTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDESCRIPTIONRule());
+						$current = createModelElement(grammarAccess.getAGENDARule());
 					}
 					setWithLastConsumed(
 						$current,
 						"description",
-						lv_description_1_0,
+						lv_description_4_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-	)
-;
-
-// Entry rule entryRuleEVENTS_OR_TASKS
-entryRuleEVENTS_OR_TASKS returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getEVENTS_OR_TASKSRule()); }
-	iv_ruleEVENTS_OR_TASKS=ruleEVENTS_OR_TASKS
-	{ $current=$iv_ruleEVENTS_OR_TASKS.current; }
-	EOF;
-
-// Rule EVENTS_OR_TASKS
-ruleEVENTS_OR_TASKS returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEVENTS_OR_TASKSAccess().getEvent_or_taskEVENTParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getAGENDAAccess().getEventEVENTParserRuleCall_5_0());
 				}
-				lv_event_or_task_0_0=ruleEVENT
+				lv_event_5_0=ruleEVENT
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getEVENTS_OR_TASKSRule());
+						$current = createModelElementForParent(grammarAccess.getAGENDARule());
 					}
 					add(
 						$current,
-						"event_or_task",
-						lv_event_or_task_0_0,
+						"event",
+						lv_event_5_0,
 						"org.xtext.univ.nantes.master.dsl.Agenda.EVENT");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
-		    |
+		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAGENDAAccess().getTaskTASKParserRuleCall_6_0());
+				}
+				lv_task_6_0=ruleTASK
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAGENDARule());
+					}
+					add(
+						$current,
+						"task",
+						lv_task_6_0,
+						"org.xtext.univ.nantes.master.dsl.Agenda.TASK");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_7=')'
 		{
-			newCompositeNode(grammarAccess.getEVENTS_OR_TASKSAccess().getTASKParserRuleCall_1());
-		}
-		this_TASK_1=ruleTASK
-		{
-			$current = $this_TASK_1.current;
-			afterParserOrEnumRuleCall();
+			newLeafNode(otherlv_7, grammarAccess.getAGENDAAccess().getRightParenthesisKeyword_7());
 		}
 	)
 ;
@@ -353,136 +272,98 @@ ruleEVENT returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getEVENTAccess().getLeftCurlyBracketKeyword_2());
 		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getEVENTAccess().getContent_eventCONTENT_EVENTParserRuleCall_3_0());
-				}
-				lv_content_event_3_0=ruleCONTENT_EVENT
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getEVENTRule());
-					}
-					set(
-						$current,
-						"content_event",
-						lv_content_event_3_0,
-						"org.xtext.univ.nantes.master.dsl.Agenda.CONTENT_EVENT");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_4='}'
+		otherlv_3='Place'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getEVENTAccess().getRightCurlyBracketKeyword_4());
-		}
-	)
-;
-
-// Entry rule entryRuleCONTENT_EVENT
-entryRuleCONTENT_EVENT returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getCONTENT_EVENTRule()); }
-	iv_ruleCONTENT_EVENT=ruleCONTENT_EVENT
-	{ $current=$iv_ruleCONTENT_EVENT.current; }
-	EOF;
-
-// Rule CONTENT_EVENT
-ruleCONTENT_EVENT returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='Place'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getCONTENT_EVENTAccess().getPlaceKeyword_0());
+			newLeafNode(otherlv_3, grammarAccess.getEVENTAccess().getPlaceKeyword_3());
 		}
 		(
 			(
-				lv_place_1_0=RULE_STRING
+				lv_place_4_0=RULE_STRING
 				{
-					newLeafNode(lv_place_1_0, grammarAccess.getCONTENT_EVENTAccess().getPlaceSTRINGTerminalRuleCall_1_0());
+					newLeafNode(lv_place_4_0, grammarAccess.getEVENTAccess().getPlaceSTRINGTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCONTENT_EVENTRule());
+						$current = createModelElement(grammarAccess.getEVENTRule());
 					}
 					setWithLastConsumed(
 						$current,
 						"place",
-						lv_place_1_0,
+						lv_place_4_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_2='Date'
+		otherlv_5='Date'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getCONTENT_EVENTAccess().getDateKeyword_2());
+			newLeafNode(otherlv_5, grammarAccess.getEVENTAccess().getDateKeyword_5());
 		}
 		(
 			(
-				lv_data_3_0=RULE_STRING
+				lv_date_6_0=RULE_STRING
 				{
-					newLeafNode(lv_data_3_0, grammarAccess.getCONTENT_EVENTAccess().getDataSTRINGTerminalRuleCall_3_0());
+					newLeafNode(lv_date_6_0, grammarAccess.getEVENTAccess().getDateSTRINGTerminalRuleCall_6_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCONTENT_EVENTRule());
+						$current = createModelElement(grammarAccess.getEVENTRule());
 					}
 					setWithLastConsumed(
 						$current,
-						"data",
-						lv_data_3_0,
+						"date",
+						lv_date_6_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_4='Start'
+		otherlv_7='Start'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getCONTENT_EVENTAccess().getStartKeyword_4());
+			newLeafNode(otherlv_7, grammarAccess.getEVENTAccess().getStartKeyword_7());
 		}
 		(
 			(
-				lv_start_5_0=RULE_STRING
+				lv_start_8_0=RULE_STRING
 				{
-					newLeafNode(lv_start_5_0, grammarAccess.getCONTENT_EVENTAccess().getStartSTRINGTerminalRuleCall_5_0());
+					newLeafNode(lv_start_8_0, grammarAccess.getEVENTAccess().getStartSTRINGTerminalRuleCall_8_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCONTENT_EVENTRule());
+						$current = createModelElement(grammarAccess.getEVENTRule());
 					}
 					setWithLastConsumed(
 						$current,
 						"start",
-						lv_start_5_0,
+						lv_start_8_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_6='End'
+		otherlv_9='End'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getCONTENT_EVENTAccess().getEndKeyword_6());
+			newLeafNode(otherlv_9, grammarAccess.getEVENTAccess().getEndKeyword_9());
 		}
 		(
 			(
-				lv_end_7_0=RULE_STRING
+				lv_end_10_0=RULE_STRING
 				{
-					newLeafNode(lv_end_7_0, grammarAccess.getCONTENT_EVENTAccess().getEndSTRINGTerminalRuleCall_7_0());
+					newLeafNode(lv_end_10_0, grammarAccess.getEVENTAccess().getEndSTRINGTerminalRuleCall_10_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCONTENT_EVENTRule());
+						$current = createModelElement(grammarAccess.getEVENTRule());
 					}
 					setWithLastConsumed(
 						$current,
 						"end",
-						lv_end_7_0,
+						lv_end_10_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
+		otherlv_11='}'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getEVENTAccess().getRightCurlyBracketKeyword_11());
+		}
 	)
 ;
 
@@ -538,7 +419,7 @@ ruleTASK returns [EObject current=null]
 					}
 					otherlv_3=RULE_ID
 					{
-						newLeafNode(otherlv_3, grammarAccess.getTASKAccess().getNameEventEVENTCrossReference_2_1_0());
+						newLeafNode(otherlv_3, grammarAccess.getTASKAccess().getRefEventEVENTCrossReference_2_1_0());
 					}
 				)
 			)

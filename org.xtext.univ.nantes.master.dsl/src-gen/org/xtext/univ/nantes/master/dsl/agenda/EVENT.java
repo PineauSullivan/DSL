@@ -15,7 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.EVENT#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.EVENT#getContent_event <em>Content event</em>}</li>
+ *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.EVENT#getPlace <em>Place</em>}</li>
+ *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.EVENT#getDate <em>Date</em>}</li>
+ *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.EVENT#getStart <em>Start</em>}</li>
+ *   <li>{@link org.xtext.univ.nantes.master.dsl.agenda.EVENT#getEnd <em>End</em>}</li>
  * </ul>
  *
  * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getEVENT()
@@ -51,29 +54,107 @@ public interface EVENT extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Content event</b></em>' containment reference.
+   * Returns the value of the '<em><b>Place</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Content event</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Place</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Content event</em>' containment reference.
-   * @see #setContent_event(CONTENT_EVENT)
-   * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getEVENT_Content_event()
-   * @model containment="true"
+   * @return the value of the '<em>Place</em>' attribute.
+   * @see #setPlace(String)
+   * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getEVENT_Place()
+   * @model
    * @generated
    */
-  CONTENT_EVENT getContent_event();
+  String getPlace();
 
   /**
-   * Sets the value of the '{@link org.xtext.univ.nantes.master.dsl.agenda.EVENT#getContent_event <em>Content event</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.univ.nantes.master.dsl.agenda.EVENT#getPlace <em>Place</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Content event</em>' containment reference.
-   * @see #getContent_event()
+   * @param value the new value of the '<em>Place</em>' attribute.
+   * @see #getPlace()
    * @generated
    */
-  void setContent_event(CONTENT_EVENT value);
+  void setPlace(String value);
+
+  /**
+   * Returns the value of the '<em><b>Date</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Date</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Date</em>' attribute.
+   * @see #setDate(String)
+   * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getEVENT_Date()
+   * @model
+   * @generated
+   */
+  String getDate();
+
+  /**
+   * Sets the value of the '{@link org.xtext.univ.nantes.master.dsl.agenda.EVENT#getDate <em>Date</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Date</em>' attribute.
+   * @see #getDate()
+   * @generated
+   */
+  void setDate(String value);
+
+  /**
+   * Returns the value of the '<em><b>Start</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Start</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Start</em>' attribute.
+   * @see #setStart(String)
+   * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getEVENT_Start()
+   * @model
+   * @generated
+   */
+  String getStart();
+
+  /**
+   * Sets the value of the '{@link org.xtext.univ.nantes.master.dsl.agenda.EVENT#getStart <em>Start</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Start</em>' attribute.
+   * @see #getStart()
+   * @generated
+   */
+  void setStart(String value);
+
+  /**
+   * Returns the value of the '<em><b>End</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>End</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>End</em>' attribute.
+   * @see #setEnd(String)
+   * @see org.xtext.univ.nantes.master.dsl.agenda.AgendaPackage#getEVENT_End()
+   * @model
+   * @generated
+   */
+  String getEnd();
+
+  /**
+   * Sets the value of the '{@link org.xtext.univ.nantes.master.dsl.agenda.EVENT#getEnd <em>End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>End</em>' attribute.
+   * @see #getEnd()
+   * @generated
+   */
+  void setEnd(String value);
 
 } // EVENT

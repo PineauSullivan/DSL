@@ -73,38 +73,25 @@ public class AgendaSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
+      case AgendaPackage.MODEL:
+      {
+        MODEL model = (MODEL)theEObject;
+        T result = caseMODEL(model);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AgendaPackage.TYPE:
+      {
+        TYPE type = (TYPE)theEObject;
+        T result = caseTYPE(type);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AgendaPackage.AGENDA:
       {
         AGENDA agenda = (AGENDA)theEObject;
         T result = caseAGENDA(agenda);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AgendaPackage.PREAMBULE:
-      {
-        PREAMBULE preambule = (PREAMBULE)theEObject;
-        T result = casePREAMBULE(preambule);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AgendaPackage.CONTENU:
-      {
-        CONTENU contenu = (CONTENU)theEObject;
-        T result = caseCONTENU(contenu);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AgendaPackage.DESCRIPTION:
-      {
-        DESCRIPTION description = (DESCRIPTION)theEObject;
-        T result = caseDESCRIPTION(description);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AgendaPackage.EVENTS_OR_TASKS:
-      {
-        EVENTS_OR_TASKS eventS_OR_TASKS = (EVENTS_OR_TASKS)theEObject;
-        T result = caseEVENTS_OR_TASKS(eventS_OR_TASKS);
+        if (result == null) result = caseTYPE(agenda);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -115,23 +102,47 @@ public class AgendaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AgendaPackage.CONTENT_EVENT:
-      {
-        CONTENT_EVENT contenT_EVENT = (CONTENT_EVENT)theEObject;
-        T result = caseCONTENT_EVENT(contenT_EVENT);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case AgendaPackage.TASK:
       {
         TASK task = (TASK)theEObject;
         T result = caseTASK(task);
-        if (result == null) result = caseEVENTS_OR_TASKS(task);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       default: return defaultCase(theEObject);
     }
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>MODEL</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>MODEL</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMODEL(MODEL object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>TYPE</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>TYPE</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTYPE(TYPE object)
+  {
+    return null;
   }
 
   /**
@@ -151,70 +162,6 @@ public class AgendaSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>PREAMBULE</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>PREAMBULE</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePREAMBULE(PREAMBULE object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>CONTENU</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>CONTENU</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseCONTENU(CONTENU object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>DESCRIPTION</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>DESCRIPTION</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDESCRIPTION(DESCRIPTION object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>EVENTS OR TASKS</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>EVENTS OR TASKS</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEVENTS_OR_TASKS(EVENTS_OR_TASKS object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>EVENT</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -226,22 +173,6 @@ public class AgendaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEVENT(EVENT object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>CONTENT EVENT</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>CONTENT EVENT</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseCONTENT_EVENT(CONTENT_EVENT object)
   {
     return null;
   }

@@ -65,17 +65,36 @@ public class AgendaFactoryImpl extends EFactoryImpl implements AgendaFactory
   {
     switch (eClass.getClassifierID())
     {
+      case AgendaPackage.MODEL: return createMODEL();
+      case AgendaPackage.TYPE: return createTYPE();
       case AgendaPackage.AGENDA: return createAGENDA();
-      case AgendaPackage.PREAMBULE: return createPREAMBULE();
-      case AgendaPackage.CONTENU: return createCONTENU();
-      case AgendaPackage.DESCRIPTION: return createDESCRIPTION();
-      case AgendaPackage.EVENTS_OR_TASKS: return createEVENTS_OR_TASKS();
       case AgendaPackage.EVENT: return createEVENT();
-      case AgendaPackage.CONTENT_EVENT: return createCONTENT_EVENT();
       case AgendaPackage.TASK: return createTASK();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MODEL createMODEL()
+  {
+    MODELImpl model = new MODELImpl();
+    return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TYPE createTYPE()
+  {
+    TYPEImpl type = new TYPEImpl();
+    return type;
   }
 
   /**
@@ -94,65 +113,10 @@ public class AgendaFactoryImpl extends EFactoryImpl implements AgendaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public PREAMBULE createPREAMBULE()
-  {
-    PREAMBULEImpl preambule = new PREAMBULEImpl();
-    return preambule;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public CONTENU createCONTENU()
-  {
-    CONTENUImpl contenu = new CONTENUImpl();
-    return contenu;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public DESCRIPTION createDESCRIPTION()
-  {
-    DESCRIPTIONImpl description = new DESCRIPTIONImpl();
-    return description;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EVENTS_OR_TASKS createEVENTS_OR_TASKS()
-  {
-    EVENTS_OR_TASKSImpl eventS_OR_TASKS = new EVENTS_OR_TASKSImpl();
-    return eventS_OR_TASKS;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EVENT createEVENT()
   {
     EVENTImpl event = new EVENTImpl();
     return event;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public CONTENT_EVENT createCONTENT_EVENT()
-  {
-    CONTENT_EVENTImpl contenT_EVENT = new CONTENT_EVENTImpl();
-    return contenT_EVENT;
   }
 
   /**

@@ -35,30 +35,22 @@ public class AgendaParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getEVENTS_OR_TASKSAccess().getAlternatives(), "rule__EVENTS_OR_TASKS__Alternatives");
 					put(grammarAccess.getAGENDAAccess().getGroup(), "rule__AGENDA__Group__0");
-					put(grammarAccess.getPREAMBULEAccess().getGroup(), "rule__PREAMBULE__Group__0");
-					put(grammarAccess.getCONTENUAccess().getGroup(), "rule__CONTENU__Group__0");
-					put(grammarAccess.getDESCRIPTIONAccess().getGroup(), "rule__DESCRIPTION__Group__0");
 					put(grammarAccess.getEVENTAccess().getGroup(), "rule__EVENT__Group__0");
-					put(grammarAccess.getCONTENT_EVENTAccess().getGroup(), "rule__CONTENT_EVENT__Group__0");
 					put(grammarAccess.getTASKAccess().getGroup(), "rule__TASK__Group__0");
 					put(grammarAccess.getTASKAccess().getGroup_2(), "rule__TASK__Group_2__0");
-					put(grammarAccess.getAGENDAAccess().getPreamAssignment_0(), "rule__AGENDA__PreamAssignment_0");
-					put(grammarAccess.getAGENDAAccess().getContenuAssignment_2(), "rule__AGENDA__ContenuAssignment_2");
-					put(grammarAccess.getPREAMBULEAccess().getNameAssignment_1(), "rule__PREAMBULE__NameAssignment_1");
-					put(grammarAccess.getCONTENUAccess().getDescAssignment_0(), "rule__CONTENU__DescAssignment_0");
-					put(grammarAccess.getCONTENUAccess().getEvtaAssignment_1(), "rule__CONTENU__EvtaAssignment_1");
-					put(grammarAccess.getDESCRIPTIONAccess().getDescriptionAssignment_1(), "rule__DESCRIPTION__DescriptionAssignment_1");
-					put(grammarAccess.getEVENTS_OR_TASKSAccess().getEvent_or_taskAssignment_0(), "rule__EVENTS_OR_TASKS__Event_or_taskAssignment_0");
+					put(grammarAccess.getMODELAccess().getListAssignment(), "rule__MODEL__ListAssignment");
+					put(grammarAccess.getAGENDAAccess().getNameAssignment_1(), "rule__AGENDA__NameAssignment_1");
+					put(grammarAccess.getAGENDAAccess().getDescriptionAssignment_4(), "rule__AGENDA__DescriptionAssignment_4");
+					put(grammarAccess.getAGENDAAccess().getEventAssignment_5(), "rule__AGENDA__EventAssignment_5");
+					put(grammarAccess.getAGENDAAccess().getTaskAssignment_6(), "rule__AGENDA__TaskAssignment_6");
 					put(grammarAccess.getEVENTAccess().getNameAssignment_1(), "rule__EVENT__NameAssignment_1");
-					put(grammarAccess.getEVENTAccess().getContent_eventAssignment_3(), "rule__EVENT__Content_eventAssignment_3");
-					put(grammarAccess.getCONTENT_EVENTAccess().getPlaceAssignment_1(), "rule__CONTENT_EVENT__PlaceAssignment_1");
-					put(grammarAccess.getCONTENT_EVENTAccess().getDataAssignment_3(), "rule__CONTENT_EVENT__DataAssignment_3");
-					put(grammarAccess.getCONTENT_EVENTAccess().getStartAssignment_5(), "rule__CONTENT_EVENT__StartAssignment_5");
-					put(grammarAccess.getCONTENT_EVENTAccess().getEndAssignment_7(), "rule__CONTENT_EVENT__EndAssignment_7");
+					put(grammarAccess.getEVENTAccess().getPlaceAssignment_4(), "rule__EVENT__PlaceAssignment_4");
+					put(grammarAccess.getEVENTAccess().getDateAssignment_6(), "rule__EVENT__DateAssignment_6");
+					put(grammarAccess.getEVENTAccess().getStartAssignment_8(), "rule__EVENT__StartAssignment_8");
+					put(grammarAccess.getEVENTAccess().getEndAssignment_10(), "rule__EVENT__EndAssignment_10");
 					put(grammarAccess.getTASKAccess().getNameAssignment_1(), "rule__TASK__NameAssignment_1");
-					put(grammarAccess.getTASKAccess().getNameEventAssignment_2_1(), "rule__TASK__NameEventAssignment_2_1");
+					put(grammarAccess.getTASKAccess().getRefEventAssignment_2_1(), "rule__TASK__RefEventAssignment_2_1");
 					put(grammarAccess.getTASKAccess().getDeadlineAssignment_5(), "rule__TASK__DeadlineAssignment_5");
 				}
 			};
@@ -70,7 +62,7 @@ public class AgendaParser extends AbstractContentAssistParser {
 	protected Collection<FollowElement> getFollowElements(AbstractInternalContentAssistParser parser) {
 		try {
 			InternalAgendaParser typedParser = (InternalAgendaParser) parser;
-			typedParser.entryRuleAGENDA();
+			typedParser.entryRuleMODEL();
 			return typedParser.getFollowElements();
 		} catch(RecognitionException ex) {
 			throw new RuntimeException(ex);
