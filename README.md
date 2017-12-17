@@ -10,7 +10,7 @@ Les consignes de ce projet se trouvent [ici](https://gitlab.univ-nantes.fr/sunye
 Tout d'abord, il faut créer un projet Xtext, voici la procédure à suivre :
 ![Création du projet 1](img/creation_project_1.png)
 ![Création du projet 2](img/creation_project_2.png)
-![Création du projet 3](img/creation_project_1.png)
+![Création du projet 3](img/creation_project_3.png)
 
 Étape 2
 -------
