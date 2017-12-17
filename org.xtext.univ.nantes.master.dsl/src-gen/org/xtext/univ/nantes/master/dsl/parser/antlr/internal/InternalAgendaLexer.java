@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 @SuppressWarnings("all")
+@SuppressWarnings("all")
 public class InternalAgendaLexer extends Lexer {
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
