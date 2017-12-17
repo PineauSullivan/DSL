@@ -1,0 +1,9 @@
+grammar org.xtext.univ.nantes.master.dsl.Agenda with org.eclipse.xtext.common.Terminals
+
+generate agenda "http://www.xtext.org/univ/nantes/master/dsl/Agenda"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
