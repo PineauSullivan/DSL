@@ -25,8 +25,6 @@ Voici le résultat obtenu :
 -------
 Puis, il faut ajouter un agenda sous le bon format (dans mon cas, ".agenda").
 
-*Remarque : j'ai réalisé une grammaire qui permet de définir autant d'agendas que nous le désirons dans un seul fichier.*
-
 Exemple :
 ```
 Agenda MyAgenda1 (
@@ -51,17 +49,6 @@ Agenda MyAgenda1 (
     }
     
 )
-
-Agenda MyAgenda2 (
-    Description "WorkAgenda2"
-
-    Event Meeting2 {
-	        Place 'Paris'
-	        Date '17/11/15'
-	        Start '9:00'
-	        End '10:00'
-    }
-}
 ```
 
 Étape 4
@@ -149,18 +136,6 @@ Description : WorkAgenda5
 
 List 1 events :
 Meeting5 - place : partout, date : 17/11/15, start : 9:00, end : 10:00.
-----------------------------------------
-
-List 0 tasks :
-----------------------------------------
-
-+++++++++++++++++++++++++++++++++++++++++++++
-Nom de l'agenda : MyAgenda6
-Description : WorkAgenda6
-----------------------------------------
-
-List 1 events :
-Meeting6 - place : Ville, date : 17/11/16, start : 9:00, end : 10:00.
 ----------------------------------------
 
 List 0 tasks :
