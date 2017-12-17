@@ -9,3 +9,6 @@ Require-Bundle: org.xtext.univ.nantes.master.dsl,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.univ.nantes.master.dsl.ide.contentassist.antlr.internal,
+ org.xtext.univ.nantes.master.dsl.ide.contentassist.antlr
+
