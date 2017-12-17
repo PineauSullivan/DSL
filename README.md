@@ -24,6 +24,7 @@ Voici le résultat obtenu :
 Étape 3
 -------
 Puis, il faut ajouter un agenda sous le bon format (dans mon cas, ".agenda").
+
 *Remarque : j'ai réalisé une grammaire qui permet de définir autant d'agendas que nous le désirons dans un seul fichier.*
 
 Exemple :
