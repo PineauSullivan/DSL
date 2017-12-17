@@ -2,8 +2,30 @@ grammar org.xtext.univ.nantes.master.dsl.Agenda with org.eclipse.xtext.common.Te
 
 generate agenda "http://www.xtext.org/univ/nantes/master/dsl/Agenda"
 
-Model:
-	greetings+=Greeting*;
+AGENDA:
+	(pream=PREAMBULE '(' contenu=CONTENU ')')?;
 	
-Greeting:
-	'Hello' name=ID '!';
+PREAMBULE:
+	'Agenda' name=ID;
+
+CONTENU:
+	desc=DESCRIPTION evta+=EVENTS_OR_TASKS*;
+
+DESCRIPTION:
+	'Description' description=STRING;
+
+EVENTS_OR_TASKS:
+	event_or_task+= EVENT | TASK;
+	
+
+EVENT:
+	'Event' name=ID '{' content_event=CONTENT_EVENT '}';
+	
+CONTENT_EVENT:
+	'Place' place=STRING
+	'Date' data=STRING
+	'Start' start=STRING
+	'End' end=STRING;
+	
+TASK:
+	'Task' name=ID ('relatesTo' nameEvent=[EVENT])? '{' 'deadline' deadline=STRING '}';
